@@ -20,7 +20,7 @@ export default function Team({ config }) {
           <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight">
             Meet Our<br />Experts
           </h2>
-          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-xl mx-auto">
             Experienced. Professional. Dedicated to bringing your outdoor vision to life with precision and care.
           </p>
         </div>
@@ -91,3 +91,6 @@ export default function Team({ config }) {
     </section>
   )
 }
+
+
+

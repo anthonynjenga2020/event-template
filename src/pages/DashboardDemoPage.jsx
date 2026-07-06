@@ -16,15 +16,15 @@ export default function DashboardDemoPage({ config }) {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#1A1A1A] pt-24 pb-12">
       <div className="max-w-6xl mx-auto px-6">
         
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-black font-headline text-gray-900 mb-4">Automation Dashboard</h1>
+          <h1 className="text-4xl font-black font-headline text-gray-900 dark:text-white mb-4">Automation Dashboard</h1>
           <p className="text-gray-600">See how the backend runs your salon on autopilot.</p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row min-h-[600px]">
+        <div className="bg-white dark:bg-[#111111] rounded-3xl shadow-xl border border-gray-100 dark:border-[#222222] overflow-hidden flex flex-col md:flex-row min-h-[600px]">
           
           {/* Sidebar */}
           <div className="w-full md:w-64 bg-gray-900 text-white p-6">
@@ -55,21 +55,21 @@ export default function DashboardDemoPage({ config }) {
                 {activeTab === 'missedCall' && (
                   <motion.div key="missedCall" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
                     <h2 className="text-2xl font-bold mb-2">Missed Call Text Back</h2>
-                    <p className="text-gray-500 mb-8">Never lose a lead when the front desk is busy.</p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-8">Never lose a lead when the front desk is busy.</p>
                     
-                    <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8">
+                    <div className="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-2xl border border-gray-100 dark:border-[#222222] mb-8">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="font-bold text-gray-900">Enable Feature</span>
+                        <span className="font-bold text-gray-900 dark:text-white">Enable Feature</span>
                         <button 
                           onClick={() => setIsMissedCallActive(!isMissedCallActive)}
                           className={`w-14 h-8 rounded-full p-1 transition-colors duration-300 \${isMissedCallActive ? 'bg-green-500' : 'bg-gray-300'}`}
                         >
-                          <div className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 \${isMissedCallActive ? 'translate-x-6' : 'translate-x-0'}`} />
+                          <div className={`w-6 h-6 bg-white dark:bg-[#111111] rounded-full shadow-md transform transition-transform duration-300 \${isMissedCallActive ? 'translate-x-6' : 'translate-x-0'}`} />
                         </button>
                       </div>
-                      <p className="text-sm text-gray-500 mb-4">When a call goes unanswered, send this template immediately:</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">When a call goes unanswered, send this template immediately:</p>
                       <textarea 
-                        className="w-full bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-700 resize-none h-24"
+                        className="w-full bg-white dark:bg-[#111111] border border-gray-200 dark:border-[#333333] rounded-xl p-4 text-sm text-gray-700 resize-none h-24"
                         defaultValue={`Hi! We're helping another client right now at \${config.businessName}. If you'd like to book an appointment, you can see our availability and book instantly right here: [Booking Link]`}
                         disabled
                       />
@@ -81,19 +81,19 @@ export default function DashboardDemoPage({ config }) {
                 {activeTab === 'waitlist' && (
                   <motion.div key="waitlist" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
                     <h2 className="text-2xl font-bold mb-2">Cancellation Filler</h2>
-                    <p className="text-gray-500 mb-8">Fill sudden openings instantly by texting your VIP waitlist.</p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-8">Fill sudden openings instantly by texting your VIP waitlist.</p>
                     
-                    <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8">
-                      <h3 className="font-bold text-gray-900 mb-4">Blast Configuration</h3>
+                    <div className="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-2xl border border-gray-100 dark:border-[#222222] mb-8">
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-4">Blast Configuration</h3>
                       <div className="space-y-4">
                         <div>
-                          <label className="text-xs font-bold text-gray-500 uppercase">Target Audience</label>
-                          <div className="bg-white border rounded-lg p-3 mt-1 text-sm font-medium">VIP Waitlist (142 Clients)</div>
+                          <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase">Target Audience</label>
+                          <div className="bg-white dark:bg-[#111111] border rounded-lg p-3 mt-1 text-sm font-medium">VIP Waitlist (142 Clients)</div>
                         </div>
                         <div>
-                          <label className="text-xs font-bold text-gray-500 uppercase">Message</label>
+                          <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase">Message</label>
                           <textarea 
-                            className="w-full bg-white border border-gray-200 rounded-lg p-3 mt-1 text-sm text-gray-700 resize-none h-20"
+                            className="w-full bg-white dark:bg-[#111111] border border-gray-200 dark:border-[#333333] rounded-lg p-3 mt-1 text-sm text-gray-700 resize-none h-20"
                             defaultValue="A 10 AM slot just opened up for a cut & color tomorrow! First to reply gets 10% off."
                           />
                         </div>
@@ -113,17 +113,17 @@ export default function DashboardDemoPage({ config }) {
                 {activeTab === 'vip' && (
                   <motion.div key="vip" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
                     <h2 className="text-2xl font-bold mb-2">VIP Reactivation</h2>
-                    <p className="text-gray-500 mb-8">Automatically win back clients who haven't booked in 6 weeks.</p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-8">Automatically win back clients who haven't booked in 6 weeks.</p>
                     
                     <div className="bg-orange-50 border border-orange-100 text-orange-800 p-4 rounded-xl mb-6 flex gap-3">
                       <Users className="w-6 h-6 shrink-0" />
                       <p className="text-sm">You have <strong>84 clients</strong> who haven't booked in over 6 weeks. Potential revenue at risk: <strong>$12,600</strong>.</p>
                     </div>
 
-                    <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                      <h3 className="font-bold text-gray-900 mb-4">"We Miss You" Campaign</h3>
+                    <div className="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-2xl border border-gray-100 dark:border-[#222222]">
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-4">"We Miss You" Campaign</h3>
                       <textarea 
-                        className="w-full bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-700 resize-none h-24 mb-4"
+                        className="w-full bg-white dark:bg-[#111111] border border-gray-200 dark:border-[#333333] rounded-xl p-4 text-sm text-gray-700 resize-none h-24 mb-4"
                         defaultValue="Hey [Name], it's been a while! We have a few openings left this week at Lumina, want to claim a spot? Reply with Y!"
                         disabled
                       />
@@ -138,16 +138,16 @@ export default function DashboardDemoPage({ config }) {
                 {activeTab === 'reminders' && (
                   <motion.div key="reminders" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
                     <h2 className="text-2xl font-bold mb-2">Automated Reminders</h2>
-                    <p className="text-gray-500 mb-8">Kill no-shows with 24hr and 2hr SMS prompts.</p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-8">Kill no-shows with 24hr and 2hr SMS prompts.</p>
                     
-                    <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8">
+                    <div className="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-2xl border border-gray-100 dark:border-[#222222] mb-8">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="font-bold text-gray-900">Enable Reminders</span>
+                        <span className="font-bold text-gray-900 dark:text-white">Enable Reminders</span>
                         <button 
                           onClick={() => setIsRemindersActive(!isRemindersActive)}
                           className={`w-14 h-8 rounded-full p-1 transition-colors duration-300 \${isRemindersActive ? 'bg-green-500' : 'bg-gray-300'}`}
                         >
-                          <div className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 \${isRemindersActive ? 'translate-x-6' : 'translate-x-0'}`} />
+                          <div className={`w-6 h-6 bg-white dark:bg-[#111111] rounded-full shadow-md transform transition-transform duration-300 \${isRemindersActive ? 'translate-x-6' : 'translate-x-0'}`} />
                         </button>
                       </div>
                       <div className="space-y-4 border-t pt-4">
@@ -173,14 +173,14 @@ export default function DashboardDemoPage({ config }) {
                 {/* iPhone Notch */}
                 <div className="absolute top-0 inset-x-0 h-6 bg-gray-800 rounded-b-3xl w-40 mx-auto z-20"></div>
                 
-                <div className="bg-white w-full h-full rounded-[2rem] overflow-hidden relative">
+                <div className="bg-white dark:bg-[#111111] w-full h-full rounded-[2rem] overflow-hidden relative">
                   {/* Phone Header */}
-                  <div className="bg-gray-100 h-20 pt-8 px-4 flex items-center justify-center border-b">
-                    <span className="font-bold text-gray-900">{config.businessName}</span>
+                  <div className="bg-gray-100 dark:bg-[#222222] h-20 pt-8 px-4 flex items-center justify-center border-b">
+                    <span className="font-bold text-gray-900 dark:text-white">{config.businessName}</span>
                   </div>
                   
                   {/* Phone Screen Content */}
-                  <div className="p-4 space-y-4 h-[calc(100%-5rem)] bg-gray-50 relative">
+                  <div className="p-4 space-y-4 h-[calc(100%-5rem)] bg-gray-50 dark:bg-[#1A1A1A] relative">
                     
                     <AnimatePresence mode="wait">
                       
@@ -236,3 +236,6 @@ export default function DashboardDemoPage({ config }) {
     </div>
   )
 }
+
+
+

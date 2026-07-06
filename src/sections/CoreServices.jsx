@@ -6,70 +6,63 @@ export default function CoreServices({ config }) {
   const gridRef = useReveal()
 
   return (
-    <section id="services" className="py-28 lg:py-40" style={{ backgroundColor: 'var(--surface)' }}>
+    <section id="services" className="py-28 lg:py-40 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div ref={headerRef} className="section-reveal flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
-              <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
-                What We Offer
+              <div className="h-px w-10 bg-primary" />
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                Treatments
               </span>
             </div>
-            <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight">
-              Our Core<br />Services
+            <h2 className="font-headline font-normal text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white leading-tight">
+              Signature<br />Services
             </h2>
           </div>
-          <p className="text-gray-500 text-base max-w-md lg:text-right">
-            Comprehensive landscaping and hardscaping solutions designed to transform your outdoor space and bring your vision to life.
+          <p className="text-gray-600 text-base font-light max-w-md lg:text-right">
+            Curated experiences designed to rejuvenate your body, elevate your style, and restore your inner peace.
           </p>
         </div>
 
         {/* Grid */}
-        <div ref={gridRef} className="section-reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div ref={gridRef} className="section-reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {config.services.map((service, i) => (
             <div
               key={i}
-              className={`relative card-hover rounded-sm border group cursor-default overflow-hidden min-h-[320px] flex flex-col justify-end ${i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
-              style={{ borderColor: 'var(--border)' }}
+              className={`relative card-hover rounded-none border border-gray-100 dark:border-[#222222] group cursor-default overflow-hidden min-h-[360px] flex flex-col justify-end bg-white dark:bg-[#111111] shadow-sm \${i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
             >
               {/* Background Image */}
               {service.image && (
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               )}
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 transition-opacity duration-500" />
 
               {/* Content */}
-              <div className="relative z-10 p-8 transform transition-transform duration-500 translate-y-24 group-hover:translate-y-0">
+              <div className="relative z-10 p-8 transform transition-transform duration-700 translate-y-16 group-hover:translate-y-0">
                 {/* Title */}
-                <h3 className="font-headline font-bold text-xl text-white uppercase tracking-wide mb-3">
+                <h3 className="font-headline font-normal text-2xl text-white mb-3 drop-shadow-md">
                   {service.name}
                 </h3>
 
-                {/* Divider */}
-                <div
-                  className="h-px w-8 mb-4 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: 'var(--primary)' }}
-                />
-
                 {/* Hover Content */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6">{service.desc}</p>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-150">
+                  <p className="text-white/90 font-light text-sm leading-relaxed mb-6">{service.desc}</p>
                   
                   {/* CTA */}
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--primary)' }}>
-                      Learn More
+                    <span className="text-xs font-medium uppercase tracking-[0.1em] text-accent">
+                      Explore Treatment
                     </span>
-                    <svg className="w-4 h-4" style={{ color: 'var(--primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
                 </div>
@@ -79,24 +72,24 @@ export default function CoreServices({ config }) {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             to="/services"
-            className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-sm text-sm"
+            className="btn-primary inline-flex items-center gap-2"
           >
-            View All Services →
+            View Full Menu
           </Link>
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-sm text-sm font-black uppercase tracking-widest border transition-all"
-            style={{ borderColor: 'var(--border)', color: 'var(--primary)' }}
-            onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.backgroundColor = 'rgba(16, 185, 129, 0.08)' }}
-            onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.backgroundColor = 'transparent' }}
+            href="/booking"
+            className="btn-outline inline-flex items-center gap-2"
           >
-            Request a Quote
+            Book Appointment
           </a>
         </div>
       </div>
     </section>
   )
 }
+
+
+

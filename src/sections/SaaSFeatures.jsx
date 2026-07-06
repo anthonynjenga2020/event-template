@@ -54,7 +54,7 @@ export default function SaaSFeatures() {
   ]
 
   return (
-    <section id="features" className="py-24 bg-white relative overflow-hidden">
+    <section id="features" className="py-24 bg-white dark:bg-[#111111] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -63,10 +63,10 @@ export default function SaaSFeatures() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-sm font-bold tracking-widest uppercase mb-3 text-gray-500">
+          <h2 className="text-sm font-bold tracking-widest uppercase mb-3 text-gray-500 dark:text-gray-400">
             Salon Growth Engine
           </h2>
-          <h3 className="text-4xl md:text-5xl font-black font-headline text-gray-900 mb-6 leading-tight">
+          <h3 className="text-4xl md:text-5xl font-black font-headline text-gray-900 dark:text-white mb-6 leading-tight">
             Put Your Salon on Autopilot
           </h3>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -82,13 +82,13 @@ export default function SaaSFeatures() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300 group"
+              className="bg-gray-50 dark:bg-[#1A1A1A] rounded-2xl p-8 border border-gray-100 dark:border-[#222222] hover:border-gray-200 dark:border-[#333333] hover:shadow-xl transition-all duration-300 group"
             >
               <div className={`w-16 h-16 rounded-xl \${feature.bg} \${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 {feature.icon}
               </div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">{feature.subtitle}</h4>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">{feature.subtitle}</h4>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed text-sm">
                 {feature.description}
               </p>
@@ -99,3 +99,6 @@ export default function SaaSFeatures() {
     </section>
   )
 }
+
+
+

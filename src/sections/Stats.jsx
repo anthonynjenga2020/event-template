@@ -20,7 +20,7 @@ export default function Stats({ config }) {
               >
                 {stat.value}
               </div>
-              <div className="text-gray-500 text-xs uppercase tracking-[0.2em] font-medium">
+              <div className="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-[0.2em] font-medium">
                 {stat.label}
               </div>
             </div>
@@ -30,3 +30,6 @@ export default function Stats({ config }) {
     </section>
   )
 }
+
+
+

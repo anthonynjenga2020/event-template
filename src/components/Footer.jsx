@@ -26,14 +26,14 @@ export default function Footer({ config }) {
                 {config.businessName}
               </span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
               {config.subTagline}
             </p>
             {/* Socials */}
             <div className="flex gap-3 mt-6">
               {config.socialLinks.instagram && (
                 <a href={config.socialLinks.instagram} target="_blank" rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 hover:text-white hover:border-primary transition-colors"
+                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:border-primary transition-colors"
                   style={{ borderColor: 'var(--border)' }}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function Footer({ config }) {
               )}
               {config.socialLinks.facebook && (
                 <a href={config.socialLinks.facebook} target="_blank" rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 hover:text-white hover:border-primary transition-colors"
+                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:border-primary transition-colors"
                   style={{ borderColor: 'var(--border)' }}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ export default function Footer({ config }) {
               )}
               {config.socialLinks.whatsapp && (
                 <a href={config.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 hover:text-[#25D366] hover:border-[#25D366] transition-colors"
+                  className="w-9 h-9 rounded-sm border flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-[#25D366] hover:border-[#25D366] transition-colors"
                   style={{ borderColor: 'var(--border)' }}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Footer({ config }) {
 
           {/* Links */}
           <div>
-            <p className="text-gray-500 text-xs uppercase tracking-[0.2em] font-bold mb-6">Quick Links</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-[0.2em] font-bold mb-6">Quick Links</p>
             <ul className="space-y-3">
               {links.map(link => (
                 <li key={link.href}>
@@ -83,7 +83,7 @@ export default function Footer({ config }) {
 
           {/* Hours */}
           <div>
-            <p className="text-gray-500 text-xs uppercase tracking-[0.2em] font-bold mb-6">Opening Hours</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-[0.2em] font-bold mb-6">Opening Hours</p>
             <ul className="space-y-3">
               {[
                 { day: 'Mon – Fri', hours: '8:00 AM – 5:00 PM' },
@@ -91,7 +91,7 @@ export default function Footer({ config }) {
                 { day: 'Sunday', hours: 'Closed' },
               ].map((item, i) => (
                 <li key={i} className="flex justify-between text-sm">
-                  <span className="text-gray-500">{item.day}</span>
+                  <span className="text-gray-500 dark:text-gray-400">{item.day}</span>
                   <span className="text-white font-medium">{item.hours}</span>
                 </li>
               ))}
@@ -114,7 +114,7 @@ export default function Footer({ config }) {
           </p>
           <p className="text-gray-700 text-xs">
             Website powered by{' '}
-            <a href="https://jengasystems.online" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors">
+            <a href="https://jengasystems.online" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors">
               Jenga Systems
             </a>
           </p>
@@ -123,3 +123,6 @@ export default function Footer({ config }) {
     </footer>
   )
 }
+
+
+

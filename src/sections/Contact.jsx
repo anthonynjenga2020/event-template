@@ -129,7 +129,7 @@ export default function Contact({ config }) {
                     </svg>
                   </div>
                   <p className="font-headline font-black text-white uppercase text-lg mb-2">Message Sent!</p>
-                  <p className="text-gray-500 text-sm">We'll get back to you within a few hours.</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">We'll get back to you within a few hours.</p>
                   <button onClick={() => setSent(false)} className="mt-4 text-xs text-gray-600 hover:text-gray-400 underline">
                     Send another message
                   </button>
@@ -138,7 +138,7 @@ export default function Contact({ config }) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Your Name *</label>
+                      <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Your Name *</label>
                       <input
                         type="text"
                         required
@@ -150,7 +150,7 @@ export default function Contact({ config }) {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Phone *</label>
+                      <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Phone *</label>
                       <input
                         type="tel"
                         required
@@ -163,7 +163,7 @@ export default function Contact({ config }) {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Email</label>
                     <input
                       type="email"
                       value={form.email}
@@ -174,7 +174,7 @@ export default function Contact({ config }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Message *</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Message *</label>
                     <textarea
                       required
                       value={form.message}
@@ -251,3 +251,6 @@ export default function Contact({ config }) {
     </section>
   )
 }
+
+
+

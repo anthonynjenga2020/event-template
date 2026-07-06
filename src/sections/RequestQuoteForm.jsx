@@ -105,7 +105,7 @@ export default function RequestQuoteForm({ config }) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Full Name *</label>
+                      <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Full Name *</label>
                       <input type="text" required value={form.name}
                         onChange={e => setForm({...form, name: e.target.value})}
                         placeholder="John Kamau"
@@ -114,7 +114,7 @@ export default function RequestQuoteForm({ config }) {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Phone *</label>
+                      <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Phone *</label>
                       <input type="tel" required value={form.phone}
                         onChange={e => setForm({...form, phone: e.target.value})}
                         placeholder="+254 700 000 000"
@@ -125,7 +125,7 @@ export default function RequestQuoteForm({ config }) {
                   </div>
 
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Email</label>
                     <input type="email" value={form.email}
                       onChange={e => setForm({...form, email: e.target.value})}
                       placeholder="john@email.com"
@@ -135,7 +135,7 @@ export default function RequestQuoteForm({ config }) {
                   </div>
 
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">What's your goal? *</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">What's your goal? *</label>
                     <select required value={form.goal}
                       onChange={e => setForm({...form, goal: e.target.value})}
                       className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
@@ -147,7 +147,7 @@ export default function RequestQuoteForm({ config }) {
                   </div>
 
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Service you're interested in</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Service you're interested in</label>
                     <select value={form.serviceInterest}
                       onChange={e => setForm({...form, serviceInterest: e.target.value})}
                       className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
@@ -159,13 +159,13 @@ export default function RequestQuoteForm({ config }) {
                   </div>
 
                   <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Best time to call</label>
+                    <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Best time to call</label>
                     <div className="grid grid-cols-3 gap-2">
                       {times.map(t => (
                         <button key={t} type="button"
                           onClick={() => setForm({...form, preferredTime: t})}
                           className={`py-2.5 px-3 rounded-sm text-xs font-bold border transition-all text-center ${
-                            form.preferredTime === t ? 'text-white' : 'text-gray-500 hover:text-gray-300'
+                            form.preferredTime === t ? 'text-white' : 'text-gray-500 dark:text-gray-400 hover:text-gray-300'
                           }`}
                           style={{
                             borderColor: form.preferredTime === t ? 'var(--primary)' : 'var(--border)',
@@ -193,3 +193,6 @@ export default function RequestQuoteForm({ config }) {
     </section>
   )
 }
+
+
+

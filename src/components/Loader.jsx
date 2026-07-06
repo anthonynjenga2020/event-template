@@ -29,3 +29,6 @@ export default function Loader({ config }) {
     </motion.div>
   )
 }
+
+
+

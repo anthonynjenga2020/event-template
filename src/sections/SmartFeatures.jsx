@@ -120,7 +120,7 @@ export default function SmartFeatures({ config }) {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
                 {feature.desc}
               </p>
 
@@ -139,3 +139,6 @@ export default function SmartFeatures({ config }) {
     </section>
   )
 }
+
+
+

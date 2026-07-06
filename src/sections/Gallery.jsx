@@ -35,7 +35,7 @@ export default function Gallery({ config }) {
               Our Work
             </h2>
           </div>
-          <p className="text-gray-500 max-w-sm lg:text-right">
+          <p className="text-gray-500 dark:text-gray-400 max-w-sm lg:text-right">
             Expert craftsmanship. Premium materials. Outdoor spaces built to last.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Gallery({ config }) {
             className="max-w-4xl w-full max-h-[85vh] object-contain rounded-sm"
           />
           <button
-            className="absolute top-6 right-6 text-white w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10"
+            className="absolute top-6 right-6 text-white w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white dark:bg-[#111111]/10"
             onClick={() => setLightbox(null)}
           >
             ✕
@@ -91,3 +91,6 @@ export default function Gallery({ config }) {
     </section>
   )
 }
+
+
+

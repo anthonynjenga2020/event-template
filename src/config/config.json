@@ -8,15 +8,15 @@
   "location": "Beverly Hills, CA",
   "googleMapsEmbed": "https://maps.google.com/maps?q=Beverly+Hills&output=embed",
   "logoUrl": "",
-  "heroImageUrl": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1200&q=80",
-  "aboutImageUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+  "heroImageUrl": "/salon3.jpg",
+  "aboutImageUrl": "/salon4.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1516975080661-46b08166299b?w=600&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?w=600&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2f1084?w=600&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=600&q=80",
-    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80"
+    "/salon5.jpg",
+    "/salon6.jpg",
+    "/salon7.jpg",
+    "/salon8.jpg",
+    "/salon9.jpg",
+    "/salon12.jpg"
   ],
   "primaryColor": "#D4A373",
   "primaryDark": "#A67B54",
@@ -34,12 +34,12 @@
   "aboutTitle": "Where Luxury Meets Care.",
   "aboutDescription": "Lumina Salon & Spa was founded on a simple principle: beauty is a feeling. We go beyond just aesthetics to provide a relaxing, rejuvenating experience that leaves you feeling as good as you look. Our team of master stylists and estheticians stay ahead of the latest trends to bring you the best in hair, skin, and nail care.",
   "services": [
-    { "name": "Precision Cuts", "icon": "", "desc": "Tailored haircuts designed to complement your face shape and lifestyle.", "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" },
-    { "name": "Color & Highlights", "icon": "", "desc": "From balayage to full transformations, our colorists are true artists.", "image": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80" },
-    { "name": "Signature Facials", "icon": "", "desc": "Customized skin treatments that cleanse, exfoliate, and hydrate.", "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" },
-    { "name": "Massage Therapy", "icon": "", "desc": "Melt away stress with our deep tissue or Swedish massage sessions.", "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" },
-    { "name": "Nail Care", "icon": "", "desc": "Luxury manicures and pedicures with premium, long-lasting polishes.", "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?w=800&q=80" },
-    { "name": "Bridal Styling", "icon": "", "desc": "Comprehensive hair and makeup packages for your special day.", "image": "https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?w=800&q=80" }
+    { "name": "Precision Cuts", "icon": "", "desc": "Tailored haircuts designed to complement your face shape and lifestyle.", "image": "/salon13.jpg" },
+    { "name": "Color & Highlights", "icon": "", "desc": "From balayage to full transformations, our colorists are true artists.", "image": "/salon14.jpg" },
+    { "name": "Signature Facials", "icon": "", "desc": "Customized skin treatments that cleanse, exfoliate, and hydrate.", "image": "/salon2.jpg" },
+    { "name": "Massage Therapy", "icon": "", "desc": "Melt away stress with our deep tissue or Swedish massage sessions.", "image": "/salon3.jpg" },
+    { "name": "Nail Care", "icon": "", "desc": "Luxury manicures and pedicures with premium, long-lasting polishes.", "image": "/salon4.jpg" },
+    { "name": "Bridal Styling", "icon": "", "desc": "Comprehensive hair and makeup packages for your special day.", "image": "/salon5.jpg" }
   ],
   "team": [
     {
@@ -47,7 +47,7 @@
       "name": "Sophia Lane",
       "specialty": "Master Colorist",
       "experience": "10 Years",
-      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+      "image": "/salon6.jpg",
       "bio": "Sophia is renowned for her seamless balayage and color correction techniques."
     },
     {
@@ -55,7 +55,7 @@
       "name": "David Chen",
       "specialty": "Lead Stylist",
       "experience": "8 Years",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "image": "/salon7.jpg",
       "bio": "David's precision cuts have been featured in several local style magazines."
     },
     {
@@ -63,7 +63,7 @@
       "name": "Elena Ross",
       "specialty": "Esthetician",
       "experience": "6 Years",
-      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+      "image": "/salon8.jpg",
       "bio": "Elena specializes in glowing, healthy skin and relaxing spa treatments."
     }
   ],

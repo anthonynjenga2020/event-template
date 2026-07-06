@@ -187,7 +187,7 @@ export default function ReviewPage({ config }) {
             <form onSubmit={handleFeedbackSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Your Name</label>
+                  <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Your Name</label>
                   <input
                     type="text"
                     value={feedback.name}
@@ -198,7 +198,7 @@ export default function ReviewPage({ config }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Phone / WhatsApp</label>
+                  <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">Phone / WhatsApp</label>
                   <input
                     type="tel"
                     value={feedback.phone}
@@ -211,7 +211,7 @@ export default function ReviewPage({ config }) {
               </div>
 
               <div>
-                <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">
+                <label className="block text-gray-500 dark:text-gray-400 text-xs uppercase tracking-widest mb-2">
                   What can we improve? *
                 </label>
                 <textarea
@@ -282,3 +282,6 @@ export default function ReviewPage({ config }) {
     </div>
   )
 }
+
+
+

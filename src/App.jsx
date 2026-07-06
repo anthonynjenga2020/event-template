@@ -11,6 +11,11 @@ import ServicesPage from './pages/ServicesPage.jsx'
 import BookingPage from './pages/BookingPage.jsx'
 import DashboardDemoPage from './pages/DashboardDemoPage.jsx'
 import ReviewPage from './pages/ReviewPage.jsx'
+import GiftCardsPage from './pages/GiftCardsPage.jsx'
+import MembershipsPage from './pages/MembershipsPage.jsx'
+import ShopPage from './pages/ShopPage.jsx'
+import TeamPage from './pages/TeamPage.jsx'
+import TeamMemberPage from './pages/TeamMemberPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 
 // Hide navbar/footer/whatsapp button on the /review page
@@ -61,9 +66,17 @@ export default function App() {
             <Route path="/booking"             element={<BookingPage config={config} />} />
             <Route path="/demo"                element={<DashboardDemoPage config={config} />} />
             <Route path="/review"              element={<ReviewPage   config={config} />} />
+            <Route path="/gift-cards"          element={<GiftCardsPage config={config} />} />
+            <Route path="/memberships"         element={<MembershipsPage config={config} />} />
+            <Route path="/shop"                element={<ShopPage config={config} />} />
+            <Route path="/team"                element={<TeamPage config={config} />} />
+            <Route path="/team/:memberId"      element={<TeamMemberPage config={config} />} />
           </Routes>
         </AnimatePresence>
       </Layout>
     </BrowserRouter>
   )
 }
+
+
+

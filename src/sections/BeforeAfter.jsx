@@ -119,7 +119,7 @@ export default function BeforeAfter({ config }) {
           style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
           <div>
             <p className="text-white font-headline font-bold text-xl uppercase">Your transformation starts with one decision.</p>
-            <p className="text-gray-500 text-sm mt-1">7 days free. No credit card. No contracts. Just show up.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">7 days free. No credit card. No contracts. Just show up.</p>
           </div>
           <a href="#free-trial" className="btn-primary px-8 py-4 rounded-sm text-sm whitespace-nowrap shrink-0">
             Claim Free Trial â
@@ -129,3 +129,6 @@ export default function BeforeAfter({ config }) {
     </section>
   )
 }
+
+
+
