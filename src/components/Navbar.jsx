@@ -17,12 +17,10 @@ export default function Navbar({ config }) {
   useEffect(() => setMenuOpen(false), [location.pathname])
 
   const navLinks = [
-    { label: 'About', href: '/#about' },
-    { label: 'Classes', href: '/classes' },
-    { label: 'Trainers', href: '/trainers' },
-    { label: 'Shop', href: '/shop' },
-    { label: 'Pricing', href: '/#pricing' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Stylists', href: '/#team' },
+    { label: 'Booking', href: '/booking' },
+    { label: 'Admin Demo', href: '/demo' },
   ]
 
   const isExternal = (href) => href.startsWith('/#')
@@ -37,17 +35,17 @@ export default function Navbar({ config }) {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           {config.logoUrl ? (
-            <img src={config.logoUrl} alt={config.gymName} className="h-10 w-auto" />
+            <img src={config.logoUrl} alt={config.businessName} className="h-10 w-auto" />
           ) : (
             <>
               <div
                 className="w-8 h-8 rounded-sm flex items-center justify-center font-headline font-black text-white text-sm"
                 style={{ backgroundColor: 'var(--primary)' }}
               >
-                {config.gymName.charAt(0)}
+                {config.businessName?.charAt(0)}
               </div>
               <span className="font-headline font-bold text-white text-lg tracking-wider uppercase">
-                {config.gymName}
+                {config.businessName}
               </span>
             </>
           )}
@@ -90,18 +88,12 @@ export default function Navbar({ config }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
         >
-          <a
-            href="#free-trial"
+          <Link
+            to="/booking"
             className="btn-primary px-6 py-3 rounded-sm text-sm"
-            onClick={(e) => {
-              if (location.pathname === '/') {
-                e.preventDefault()
-                document.getElementById('free-trial')?.scrollIntoView({ behavior: 'smooth' })
-              }
-            }}
           >
-            Free Trial
-          </a>
+            {config.bookingCTA || 'Book Now'}
+          </Link>
         </motion.div>
 
         {/* Mobile menu button */}
@@ -129,16 +121,16 @@ export default function Navbar({ config }) {
                 {link.label}
               </a>
             ) : (
-              <Link key={link.href} to={link.href}
+              <Link key={link.href} to={link.href} onClick={() => setMenuOpen(false)}
                 className="text-gray-300 hover:text-white text-base font-medium uppercase tracking-widest transition-colors">
                 {link.label}
               </Link>
             )
           )}
-          <a href="/#free-trial" onClick={() => setMenuOpen(false)}
+          <Link to="/booking" onClick={() => setMenuOpen(false)}
             className="btn-primary px-6 py-4 rounded-sm text-sm text-center mt-2">
-            Free Trial
-          </a>
+            {config.bookingCTA || 'Book Now'}
+          </Link>
         </div>
       </div>
     </nav>

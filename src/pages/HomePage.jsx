@@ -2,14 +2,12 @@ import Hero from '../sections/Hero.jsx'
 import Stats from '../sections/Stats.jsx'
 import About from '../sections/About.jsx'
 import CoreServices from '../sections/CoreServices.jsx'
-import BeforeAfter from '../sections/BeforeAfter.jsx'
-import RecentProjects from '../sections/RecentProjects.jsx'
+import SaaSFeatures from '../sections/SaaSFeatures.jsx'
 import Team from '../sections/Team.jsx'
 import Gallery from '../sections/Gallery.jsx'
 import Testimonials from '../sections/Testimonials.jsx'
 import Process from '../sections/Process.jsx'
 import CTA from '../sections/CTA.jsx'
-import RequestQuoteForm from '../sections/RequestQuoteForm.jsx'
 import FAQ from '../sections/FAQ.jsx'
 import Contact from '../sections/Contact.jsx'
 import Loader from '../components/Loader.jsx'
@@ -38,16 +36,14 @@ export default function HomePage({ config }) {
         <Hero config={config} />
         <Marquee />
         <Stats config={config} />
+        <SaaSFeatures />
         <About config={config} />
         <CoreServices config={config} />
-        <BeforeAfter config={config} />
-        <RecentProjects config={config} />
         <Team config={config} />
         <Gallery config={config} />
         <Testimonials config={config} />
         <Process config={config} />
         <CTA config={config} />
-        <RequestQuoteForm config={config} />
         <FAQ config={config} />
         <Contact config={config} />
       </main>

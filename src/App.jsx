@@ -8,10 +8,9 @@ import WhatsAppButton from './components/WhatsAppButton.jsx'
 // Pages
 import HomePage from './pages/HomePage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
-import TeamPage from './pages/TeamPage.jsx'
-import TeamMemberPage from './pages/TeamMemberPage.jsx'
+import BookingPage from './pages/BookingPage.jsx'
+import DashboardDemoPage from './pages/DashboardDemoPage.jsx'
 import ReviewPage from './pages/ReviewPage.jsx'
-import ShopPage from './pages/ShopPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 
 // Hide navbar/footer/whatsapp button on the /review page
@@ -39,9 +38,8 @@ export default function App() {
       
       if (businessQuery) {
         newConfig.businessName = businessQuery
-        // Replace all instances of Ironclad Landscaping in messages and descriptions
-        newConfig.whatsappMessage = newConfig.whatsappMessage.replace(/Ironclad Landscaping/g, businessQuery)
-        newConfig.aboutDescription = newConfig.aboutDescription.replace(/Ironclad Landscaping/g, businessQuery)
+        newConfig.whatsappMessage = newConfig.whatsappMessage.replace(/Lumina Salon & Spa/g, businessQuery)
+        newConfig.aboutDescription = newConfig.aboutDescription.replace(/Lumina Salon & Spa/g, businessQuery)
       }
       
       if (locationQuery) {
@@ -60,9 +58,8 @@ export default function App() {
           <Routes>
             <Route path="/"                    element={<HomePage    config={config} />} />
             <Route path="/services"            element={<ServicesPage config={config} />} />
-            <Route path="/team"                element={<TeamPage config={config} />} />
-            <Route path="/team/:memberId"      element={<TeamMemberPage  config={config} />} />
-            <Route path="/shop"                element={<ShopPage     config={config} />} />
+            <Route path="/booking"             element={<BookingPage config={config} />} />
+            <Route path="/demo"                element={<DashboardDemoPage config={config} />} />
             <Route path="/review"              element={<ReviewPage   config={config} />} />
           </Routes>
         </AnimatePresence>
