@@ -1,12 +1,12 @@
 {
-  "businessId": "demo-landscaping",
-  "businessName": "OASIS LANDSCAPING",
-  "tagline": "Transforming Outdoor Spaces.",
-  "subTagline": "Nairobi's premier landscaping and hardscaping contractors. We build outdoor living areas that last.",
+  "businessId": "demo-events",
+  "businessName": "LUXE EVENTS CO.",
+  "tagline": "Creating Unforgettable Experiences.",
+  "subTagline": "Premier event planning and management for corporate events, weddings, and private galas.",
   "phone": "+254 700 000 000",
-  "email": "hello@oasislandscaping.co.ke",
-  "location": "Karen, Nairobi, Kenya",
-  "googleMapsEmbed": "https://maps.google.com/maps?q=Karen+Nairobi&output=embed",
+  "email": "hello@luxeevents.co.ke",
+  "location": "Nairobi, Kenya",
+  "googleMapsEmbed": "https://maps.google.com/maps?q=Nairobi&output=embed",
   "logoUrl": "",
   "heroImageUrl": "/scaper (10).png",
   "aboutImageUrl": "/scaper (11).png",
@@ -18,168 +18,129 @@
     "/scaper (5).png",
     "/scaper (6).png"
   ],
-  "primaryColor": "#10B981",
-  "primaryDark": "#059669",
+  "primaryColor": "#D4AF37",
+  "primaryDark": "#AA8C2C",
   "accentColor": "#FFFFFF",
-  "bgColor": "#0A0A0A",
-  "surfaceColor": "#141414",
-  "borderColor": "#222222",
+  "bgColor": "#111111",
+  "surfaceColor": "#1A1A1A",
+  "borderColor": "#333333",
   "templateVariant": "V2",
   "stats": [
     {
-      "value": "150+",
-      "label": "Projects Completed"
+      "value": "200+",
+      "label": "Events Orchestrated"
     },
     {
-      "value": "10",
+      "value": "15",
       "label": "Years Experience"
     },
     {
       "value": "5★",
-      "label": "Google Rating"
+      "label": "Client Rating"
     },
     {
       "value": "100%",
-      "label": "Client Satisfaction"
+      "label": "Attention to Detail"
     }
   ],
-  "aboutTitle": "We Don't Just Plant Trees. We Build Experiences.",
-  "aboutDescription": "Oasis Landscaping was built for homeowners who want more from their outdoors. From complete garden redesigns to elegant hardscaping and reliable maintenance, our team of experts turns your vision into a reality.\n\nWhether you need a new patio for entertaining or a serene garden retreat — we deliver quality that lasts.",
+  "aboutTitle": "We Don't Just Plan Events. We Craft Memories.",
+  "aboutDescription": "Luxe Events Co. was built for clients who want an impeccable, stress-free event experience. From intimate gatherings to large-scale brand activations, our team handles every detail with meticulous precision.\n\nWhether you need comprehensive wedding planning or a seamless corporate gala — we deliver experiences that leave a lasting impression.",
   "services": [
     {
-      "name": "Landscape Design",
+      "name": "Corporate Events",
       "icon": "",
-      "desc": "Custom 3D designs and planning to bring your dream garden to life before we even break ground.",
+      "desc": "Conferences, galas, and brand activations designed to impress stakeholders and engage audiences.",
       "image": "/scaper (21).jpg"
     },
     {
-      "name": "Hardscaping",
+      "name": "Weddings",
       "icon": "",
-      "desc": "Patios, walkways, retaining walls, and outdoor kitchens built with premium stone and pavers.",
+      "desc": "Full-service wedding planning, from venue sourcing to day-of coordination for your special day.",
       "image": "/scaper (20).jpg"
     },
     {
-      "name": "Lawn Installation",
+      "name": "Private Galas",
       "icon": "",
-      "desc": "Premium sod installation, seeding, and artificial turf options for a lush, green lawn year-round.",
+      "desc": "Exclusive, high-end private parties and celebrations tailored to your unique style.",
       "image": "/scaper (19).jpg"
     },
     {
-      "name": "Irrigation Systems",
+      "name": "Brand Activations",
       "icon": "",
-      "desc": "Smart sprinkler systems and drip irrigation to keep your landscape healthy while saving water.",
+      "desc": "Immersive brand experiences that captivate consumers and leave a lasting impact.",
       "image": "/scaper (18).jpg"
     },
     {
-      "name": "Outdoor Lighting",
+      "name": "Venue Sourcing",
       "icon": "",
-      "desc": "Enhance security and extend your outdoor living hours with custom LED landscape lighting.",
+      "desc": "Finding the perfect backdrop for your event from our exclusive network of premium venues.",
       "image": "/scaper (17).jpg"
     },
     {
-      "name": "Garden Maintenance",
+      "name": "Event Design",
       "icon": "",
-      "desc": "Ongoing seasonal care, pruning, and fertilization to keep your landscape thriving year-round.",
+      "desc": "Custom concept design, floral arrangements, and decor to bring your vision to life.",
       "image": "/scaper (16).jpg"
     }
   ],
   "recentProjects": [
     {
-      "name": "The Karen Estate Redesign",
-      "tagline": "Complete front and backyard overhaul including custom stone patio.",
-      "duration": "4 Weeks",
-      "budget": "Ksh 850,000",
+      "name": "Annual Tech Summit",
+      "tagline": "A two-day conference for 500+ industry leaders.",
+      "duration": "6 Months Planning",
+      "budget": "Custom",
       "icon": "",
       "includes": [
-        "3D Design",
-        "Sod Installation",
-        "Custom Pavers",
-        "Outdoor Lighting",
-        "Native Plantings"
+        "Venue Sourcing",
+        "Stage Design",
+        "A/V Coordination",
+        "Catering",
+        "Guest Management"
       ]
     },
     {
-      "name": "Lavington Modern Garden",
-      "tagline": "Minimalist, low-maintenance garden design with artificial turf and sleek planters.",
-      "duration": "2 Weeks",
-      "budget": "Ksh 450,000",
+      "name": "Luxury Garden Wedding",
+      "tagline": "An elegant, bespoke wedding experience for 200 guests.",
+      "duration": "1 Year Planning",
+      "budget": "Custom",
       "icon": "",
       "includes": [
-        "Artificial Turf",
-        "Concrete Planters",
-        "Drip Irrigation",
-        "Gravel Pathways"
+        "Full-Service Planning",
+        "Floral Design",
+        "Vendor Management",
+        "Day-of Coordination"
       ]
     },
     {
-      "name": "Runda Water Feature",
-      "tagline": "Elegant koi pond and waterfall integration with surrounding rock garden.",
-      "duration": "3 Weeks",
-      "budget": "Ksh 600,000",
+      "name": "Fashion Brand Launch",
+      "tagline": "An immersive product launch event and after-party.",
+      "duration": "3 Months Planning",
+      "budget": "Custom",
       "icon": "",
       "includes": [
-        "Pond Construction",
-        "Water Pump System",
-        "Rock Layout",
-        "Aquatic Plants"
+        "Concept Design",
+        "Lighting & Sound",
+        "Influencer Outreach",
+        "Custom Fabrication"
       ]
-    }
-  ],
-  "beforeAfter": [
-    {
-      "name": "Backyard Patio Addition",
-      "duration": "3 weeks",
-      "statBefore": "Muddy, unusable yard",
-      "statAfter": "Custom stone patio & fire pit",
-      "change": "Full Transformation",
-      "highlight": "Added 400 sq ft of living space",
-      "quote": "The team at Oasis completely changed how we use our home. We went from never going in the backyard to hosting braais every weekend. Highly professional crew.",
-      "program": "Hardscaping & Lawn",
-      "imageBefore": "/scaper (2).jpeg",
-      "imageAfter": "/scaper (3).png"
-    },
-    {
-      "name": "Front Yard Curb Appeal",
-      "duration": "1 week",
-      "statBefore": "Overgrown, dying grass",
-      "statAfter": "Lush sod and native plants",
-      "change": "Visual Overhaul",
-      "highlight": "Increased Property Value",
-      "quote": "Our house looks completely different from the street now. The new sod rooted perfectly and the plant selection is exactly what we wanted.",
-      "program": "Landscaping",
-      "imageBefore": "/scaper (4).png",
-      "imageAfter": "/scaper (5).png"
-    },
-    {
-      "name": "Poolside Retreat",
-      "duration": "4 weeks",
-      "statBefore": "Cracked concrete surround",
-      "statAfter": "Premium travertine pavers",
-      "change": "Luxury Upgrade",
-      "highlight": "Resort-style aesthetic",
-      "quote": "They turned our old, unsafe pool deck into a luxury retreat. The craftsmanship on the stonework is incredible.",
-      "program": "Hardscaping",
-      "imageBefore": "/scaper (6).png",
-      "imageAfter": "/scaper (12).png"
     }
   ],
   "team": [
     {
-      "id": "david-mutua",
-      "name": "David Mutua",
-      "specialty": "Lead Landscape Architect",
-      "experience": "12 Years",
+      "id": "elena-rossi",
+      "name": "Elena Rossi",
+      "specialty": "Lead Event Director",
+      "experience": "15 Years",
       "image": "/scaper (14).png",
       "coverImage": "/scaper (13).png",
-      "bio": "David leads our design team, bringing over a decade of experience in crafting beautiful, sustainable outdoor spaces in Kenya. He works closely with clients to ensure their vision is realized perfectly.",
+      "bio": "Elena brings a wealth of experience in high-end event production, ensuring every event is executed flawlessly and exceeds client expectations.",
       "certifications": [
-        "BSc Landscape Architecture",
-        "Certified Arborist"
+        "Certified Special Events Professional (CSEP)"
       ],
       "specialties": [
-        "3D Landscape Design",
-        "Native Plant Selection",
-        "Sustainable Landscaping"
+        "Corporate Galas",
+        "Luxury Weddings",
+        "Strategic Planning"
       ],
       "availableDays": [
         "Monday",
@@ -188,121 +149,130 @@
         "Thursday",
         "Friday"
       ],
-      "quote": "A great landscape doesn't just look good; it feels right."
+      "quote": "The magic is in the details."
     },
     {
-      "id": "jane-wambui",
-      "name": "Jane Wambui",
-      "specialty": "Hardscaping Specialist",
-      "experience": "8 Years",
+      "id": "marcus-chen",
+      "name": "Marcus Chen",
+      "specialty": "Creative Director",
+      "experience": "10 Years",
       "image": "/scaper (10).png",
       "coverImage": "/scaper (11).png",
-      "bio": "Jane is our resident expert in stone, pavers, and retaining walls. She has a keen eye for detail and ensures every patio and walkway is built to perfection and designed to last.",
+      "bio": "Marcus is the visionary behind our event designs, transforming ordinary spaces into extraordinary immersive experiences.",
       "certifications": [
-        "Certified Hardscape Installer"
+        "BA Event Design"
       ],
       "specialties": [
-        "Patio Construction",
-        "Retaining Walls",
-        "Outdoor Kitchens"
+        "Concept Development",
+        "Floral & Decor",
+        "Lighting Design"
       ],
       "availableDays": [
         "Monday",
         "Wednesday",
         "Friday"
       ],
-      "quote": "Strong foundations build beautiful spaces."
+      "quote": "Every event should tell a unique story."
     },
     {
-      "id": "peter-oti",
-      "name": "Peter Oti",
-      "specialty": "Irrigation & Lighting Expert",
-      "experience": "5 Years",
+      "id": "sophia-williams",
+      "name": "Sophia Williams",
+      "specialty": "Vendor Relations Manager",
+      "experience": "8 Years",
       "image": "/scaper (8).png",
       "coverImage": "/scaper (9).png",
-      "bio": "Peter ensures your landscape thrives and shines. From smart water-saving irrigation systems to elegant outdoor lighting, he brings the technical expertise that keeps your space looking its best.",
+      "bio": "Sophia manages our extensive network of premium vendors, ensuring we secure the best talent, venues, and services for your event.",
       "certifications": [
-        "Certified Irrigation Technician"
+        "Certified Meeting Professional (CMP)"
       ],
       "specialties": [
-        "Smart Sprinklers",
-        "LED Landscape Lighting",
-        "Water Management"
+        "Contract Negotiation",
+        "Venue Sourcing",
+        "Logistics Management"
       ],
       "availableDays": [
         "Tuesday",
         "Thursday",
         "Saturday"
       ],
-      "quote": "The right light and the right water make all the difference."
+      "quote": "Strong partnerships build unforgettable events."
     }
   ],
   "testimonials": [
     {
-      "name": "Sarah K.",
+      "name": "Sarah & James K.",
       "rating": 5,
       "platform": "Google",
-      "text": "Incredible work by the Oasis team. They were on time, stuck to the budget, and the new patio looks stunning. Highly recommended!",
+      "text": "Luxe Events Co. made our wedding day completely stress-free. Every detail was perfect, and the design took our breath away. Highly recommend!",
       "date": "Jan 2025"
     },
     {
-      "name": "Michael N.",
+      "name": "David M., CEO",
       "rating": 5,
       "platform": "Google",
-      "text": "We hired them for a complete lawn renovation and irrigation install. The difference is night and day. Very professional crew.",
+      "text": "They handled our annual corporate gala with absolute professionalism. The event flowed seamlessly and our stakeholders were thoroughly impressed.",
       "date": "Feb 2025"
     },
     {
-      "name": "Grace M.",
+      "name": "Amanda R.",
       "rating": 5,
       "platform": "Google",
-      "text": "The 3D design process was amazing. We could see exactly what our garden would look like before they even started. The final result exceeded our expectations.",
+      "text": "The attention to detail is unmatched. I hired them for a private 50th birthday celebration and it was the best party I've ever hosted.",
       "date": "Mar 2025"
     },
     {
-      "name": "John O.",
+      "name": "Global Tech Inc.",
       "rating": 5,
       "platform": "Facebook",
-      "text": "Oasis Landscaping transformed our front yard into a beautiful, low-maintenance space. The team was respectful, clean, and fast.",
+      "text": "Our brand activation was a massive success thanks to Elena and her team. They brought our vision to life creatively and effectively.",
       "date": "Apr 2025"
     },
     {
-      "name": "Linda W.",
+      "name": "Jessica W.",
       "rating": 5,
       "platform": "Google",
-      "text": "Highly recommend for any hardscaping needs! The new fire pit and stone seating area they built for us is perfect for hosting friends.",
+      "text": "If you want a flawless, beautiful event without the headache of planning it yourself, Luxe Events Co. is the only choice.",
       "date": "May 2025"
     }
   ],
   "faqs": [
     {
-      "q": "Do you provide free estimates?",
-      "a": "Yes, we offer free, no-obligation site visits and estimates for all potential projects."
+      "q": "How far in advance should we book your services?",
+      "a": "For large events like weddings or corporate galas, we recommend booking 9-12 months in advance. For smaller events, 3-6 months is usually sufficient, though we can sometimes accommodate tighter timelines."
     },
     {
-      "q": "How long does a typical project take?",
-      "a": "It depends on the scope. A simple lawn installation might take a few days, while a full backyard redesign with hardscaping can take 3-4 weeks. We'll give you a clear timeline during the estimate."
+      "q": "Do you handle venue sourcing?",
+      "a": "Yes! We have an extensive network of premium venues and will present you with options that perfectly match your vision, guest count, and budget."
     },
     {
-      "q": "Do you offer ongoing maintenance?",
-      "a": "Yes! We offer weekly and bi-weekly maintenance packages to keep your new landscape looking perfect year-round."
+      "q": "What is your minimum budget requirement?",
+      "a": "Because we focus on full-service, premium experiences, our minimum event budget starts at $15,000. Please contact us for a customized quote based on your specific needs."
+    },
+    {
+      "q": "Do you offer day-of coordination?",
+      "a": "While we specialize in full-service planning and design, we do offer month-of/day-of coordination packages depending on availability."
     }
   ],
   "process": [
     {
-      "name": "Consultation & Estimate",
-      "description": "We visit your property, listen to your ideas, and provide a detailed, transparent estimate.",
-      "icon": "clipboard"
+      "name": "Discovery Call",
+      "description": "We start with a consultation to understand your vision, requirements, and expectations for the event.",
+      "icon": "phone"
     },
     {
-      "name": "Design & Planning",
-      "description": "For larger projects, we create custom 3D designs so you can see exactly what you're getting before we start.",
+      "name": "Concept Design",
+      "description": "Our creative team develops a comprehensive design proposal, including mood boards, floor plans, and vendor recommendations.",
       "icon": "pen"
     },
     {
-      "name": "Installation",
-      "description": "Our professional crew arrives on time, works efficiently, and keeps the site clean throughout the build.",
-      "icon": "hammer"
+      "name": "Vendor Sourcing & Planning",
+      "description": "We handle all logistics, contract negotiations, and vendor coordination to ensure every element is secured.",
+      "icon": "users"
+    },
+    {
+      "name": "Day-of Execution",
+      "description": "Our team is on-site managing every detail, allowing you to relax and enjoy a flawless, stress-free event.",
+      "icon": "check"
     }
   ],
   "socialLinks": {
@@ -312,8 +282,8 @@
     "tiktok": ""
   },
   "whatsappNumber": "254700000000",
-  "whatsappMessage": "Hi! I'd like to get a free estimate from Oasis Landscaping.",
-  "trialCTA": "Get a Free Estimate",
+  "whatsappMessage": "Hi! I'd like to book a consultation with Luxe Events Co.",
+  "trialCTA": "Book a Consultation",
   "paystackPublicKey": "",
   "deployedUrl": "",
   "vercelProjectId": "",

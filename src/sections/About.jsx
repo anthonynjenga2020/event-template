@@ -33,10 +33,10 @@ export default function About({ config }) {
 
             <div className="mt-10 flex flex-wrap gap-8">
               {[
-                { icon: '✓', text: 'Tailored Solutions' },
-                { icon: '✓', text: 'Premium Materials' },
-                { icon: '✓', text: 'Transparent Process' },
-                { icon: '✓', text: 'Reliable Support' },
+                { icon: '✓', text: 'Bespoke Design' },
+                { icon: '✓', text: 'Premium Vendors' },
+                { icon: '✓', text: 'Flawless Execution' },
+                { icon: '✓', text: 'Stress-Free Process' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <span className="font-black text-sm" style={{ color: 'var(--primary)' }}>{item.icon}</span>

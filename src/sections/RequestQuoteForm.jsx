@@ -5,30 +5,27 @@ import { insertLead } from '../lib/supabase.js'
 export default function RequestQuoteForm({ config }) {
   const ref = useReveal()
   const [form, setForm] = useState({
-    name: '', email: '', phone: '', goal: '', serviceInterest: '', preferredTime: ''
+    name: '', email: '', phone: '', eventType: '', eventDate: '', guestCount: '', budget: ''
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const goals = ['Full Redesign', 'Maintenance', 'Quick Fix', 'Consultation', 'Other']
-  const times = ['Morning', 'Afternoon', 'Evening']
+  const budgets = ['Under $15k', '$15k - $30k', '$30k - $50k', '$50k+']
+  const guestCounts = ['Under 50', '50 - 100', '100 - 300', '300+']
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     try {
       await insertLead({
-        gymName:       config.businessName, // Supabase column still expects gymName internally unless we changed it in the edge function / schema. Wait, I changed it to business_name in schema.sql!
-        // Actually, insertLead might use businessName. Let me check lib/supabase.js
-        // Let's pass businessName instead.
         businessName:  config.businessName,
         name:          form.name,
         email:         form.email,
         phone:         form.phone,
-        goal:          form.goal,
-        classInterest: form.serviceInterest, // Using classInterest for now to keep DB simple, or maybe service_interest if changed. I will map it to classInterest for now or serviceInterest.
-        preferredTime: form.preferredTime,
-        source:        'website_quote_request',
+        goal:          `Date: ${form.eventDate} | Guests: ${form.guestCount} | Budget: ${form.budget}`,
+        classInterest: form.eventType,
+        preferredTime: 'N/A',
+        source:        'website_consultation_request',
       })
     } catch (err) {
       console.error('Lead submit error:', err)
@@ -52,23 +49,23 @@ export default function RequestQuoteForm({ config }) {
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
               <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
-                Free Estimate
+                Inquire Now
               </span>
             </div>
             <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight mb-6">
-              Let's Build.<br />
+              Let's Plan.<br />
               Your Dream.<br />
-              <span style={{ color: 'var(--primary)' }}>Space.</span>
+              <span style={{ color: 'var(--primary)' }}>Event.</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Ready to transform your outdoors? Request a free, no-obligation quote today. We'll visit your property and provide a detailed estimate.
+              Ready to create an unforgettable experience? Book a consultation today. We'll discuss your vision and see how we can bring it to life.
             </p>
             <div className="space-y-4">
               {[
-                'Free on-site consultation',
-                'Detailed, transparent pricing',
-                'Expert design recommendations',
-                'No commitment required',
+                'Complimentary initial consultation',
+                'Customized event proposals',
+                'Exclusive venue network access',
+                'Stress-free planning process',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-sm flex items-center justify-center shrink-0"
@@ -92,15 +89,15 @@ export default function RequestQuoteForm({ config }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-headline font-black text-2xl text-white uppercase mb-3">Quote Requested!</h3>
+                <h3 className="font-headline font-black text-2xl text-white uppercase mb-3">Consultation Requested!</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  We'll call you within 24 hours to schedule your site visit.
+                  We'll contact you within 24 hours to schedule your consultation.
                 </p>
               </div>
             ) : (
               <>
                 <h3 className="font-headline font-bold text-xl text-white uppercase mb-6">
-                  Request a Free Quote
+                  Book a Consultation
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -108,7 +105,7 @@ export default function RequestQuoteForm({ config }) {
                       <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Full Name *</label>
                       <input type="text" required value={form.name}
                         onChange={e => setForm({...form, name: e.target.value})}
-                        placeholder="John Kamau"
+                        placeholder="Jane Doe"
                         className="w-full px-4 py-3 rounded-sm text-white text-sm placeholder-gray-600 border focus:outline-none transition-colors"
                         style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)' }}
                       />
@@ -128,62 +125,64 @@ export default function RequestQuoteForm({ config }) {
                     <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Email</label>
                     <input type="email" value={form.email}
                       onChange={e => setForm({...form, email: e.target.value})}
-                      placeholder="john@email.com"
+                      placeholder="jane@email.com"
                       className="w-full px-4 py-3 rounded-sm text-white text-sm placeholder-gray-600 border focus:outline-none transition-colors"
                       style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)' }}
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">What's your goal? *</label>
-                    <select required value={form.goal}
-                      onChange={e => setForm({...form, goal: e.target.value})}
-                      className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
-                      style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: form.goal ? 'white' : '#4b5563' }}
-                    >
-                      <option value="" disabled>Select your goal...</option>
-                      {goals.map(g => <option key={g} value={g} className="text-white bg-gray-900">{g}</option>)}
-                    </select>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Event Date</label>
+                      <input type="date" value={form.eventDate}
+                        onChange={e => setForm({...form, eventDate: e.target.value})}
+                        className="w-full px-4 py-3 rounded-sm text-white text-sm border focus:outline-none transition-colors"
+                        style={Object.assign({backgroundColor: 'var(--surface)', borderColor: 'var(--border)'}, form.eventDate ? {} : {color: '#4b5563'})}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Event Type *</label>
+                      <select required value={form.eventType}
+                        onChange={e => setForm({...form, eventType: e.target.value})}
+                        className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
+                        style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: form.eventType ? 'white' : '#4b5563' }}
+                      >
+                        <option value="" disabled>Select event type...</option>
+                        {config.services?.map(s => <option key={s.name} value={s.name} className="text-white bg-gray-900">{s.name}</option>)}
+                      </select>
+                    </div>
                   </div>
 
-                  <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Service you're interested in</label>
-                    <select value={form.serviceInterest}
-                      onChange={e => setForm({...form, serviceInterest: e.target.value})}
-                      className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
-                      style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: form.serviceInterest ? 'white' : '#4b5563' }}
-                    >
-                      <option value="">Not sure yet</option>
-                      {config.services?.map(s => <option key={s.name} value={s.name} className="text-white bg-gray-900">{s.name}</option>)}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Best time to call</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {times.map(t => (
-                        <button key={t} type="button"
-                          onClick={() => setForm({...form, preferredTime: t})}
-                          className={`py-2.5 px-3 rounded-sm text-xs font-bold border transition-all text-center ${
-                            form.preferredTime === t ? 'text-white' : 'text-gray-500 hover:text-gray-300'
-                          }`}
-                          style={{
-                            borderColor: form.preferredTime === t ? 'var(--primary)' : 'var(--border)',
-                            backgroundColor: form.preferredTime === t ? 'rgba(16,185,129,0.1)' : 'transparent'
-                          }}
-                        >
-                          {t}
-                        </button>
-                      ))}
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Guest Count</label>
+                      <select value={form.guestCount}
+                        onChange={e => setForm({...form, guestCount: e.target.value})}
+                        className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
+                        style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: form.guestCount ? 'white' : '#4b5563' }}
+                      >
+                        <option value="">Select guest count...</option>
+                        {guestCounts.map(g => <option key={g} value={g} className="text-white bg-gray-900">{g}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-gray-500 text-xs uppercase tracking-widest mb-2">Est. Budget</label>
+                      <select value={form.budget}
+                        onChange={e => setForm({...form, budget: e.target.value})}
+                        className="w-full px-4 py-3 rounded-sm text-sm border focus:outline-none transition-colors appearance-none"
+                        style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: form.budget ? 'white' : '#4b5563' }}
+                      >
+                        <option value="">Select budget...</option>
+                        {budgets.map(b => <option key={b} value={b} className="text-white bg-gray-900">{b}</option>)}
+                      </select>
                     </div>
                   </div>
 
                   <button type="submit" disabled={loading}
                     className="btn-primary w-full py-4 rounded-sm text-sm flex items-center justify-center gap-2 mt-2"
                   >
-                    {loading ? 'Submitting...' : 'Request Quote →'}
+                    {loading ? 'Submitting...' : 'Inquire Now →'}
                   </button>
-
                 </form>
               </>
             )}

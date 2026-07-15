@@ -25,18 +25,18 @@ export default function CTA({ config }) {
         <div className="flex items-center justify-center gap-4 mb-6">
           <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
           <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
-            Ready to Transform Your Yard?
+            Ready to Plan Your Next Event?
           </span>
           <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
         </div>
 
         <h2 className="font-headline font-black text-5xl sm:text-6xl lg:text-7xl text-white uppercase leading-tight mb-6">
-          Get a Free<br />
-          <span style={{ color: 'var(--primary)' }}>Estimate.</span>
+          Book a<br />
+          <span style={{ color: 'var(--primary)' }}>Consultation.</span>
         </h2>
 
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-          Contact us today for a free on-site consultation and quote. We'll work with you to bring your outdoor vision to life.
+          Contact us today to discuss your vision. Let's create an unforgettable experience together.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">

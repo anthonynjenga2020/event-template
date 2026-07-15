@@ -36,7 +36,7 @@ export default function Gallery({ config }) {
             </h2>
           </div>
           <p className="text-gray-500 max-w-sm lg:text-right">
-            Expert craftsmanship. Premium materials. Outdoor spaces built to last.
+            Meticulous attention to detail. Unforgettable experiences. Events that leave a lasting impression.
           </p>
         </div>
 

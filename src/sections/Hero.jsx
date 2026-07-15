@@ -71,7 +71,7 @@ export default function Hero({ config }) {
                 className="block text-6xl sm:text-8xl lg:text-9xl xl:text-[10rem]"
                 style={{ color: 'var(--primary)' }}
               >
-                {config.businessName.split(' ').slice(1).join(' ') || 'LANDSCAPING'}
+                {config.businessName.split(' ').slice(1).join(' ') || 'EVENTS'}
               </span>
             </h1>
 
