@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { useReveal } from '../hooks/useReveal.js'
 
 export default function Gallery({ config }) {
-  const [lightbox, setLightbox] = useState(null)
   const headerRef = useReveal()
   const gridRef = useReveal()
 
@@ -18,25 +16,24 @@ export default function Gallery({ config }) {
   return (
     <section
       id="gallery"
-      className="py-28 lg:py-40"
-      style={{ backgroundColor: 'var(--bg)' }}
+      className="py-28 lg:py-40 bg-[#FAFAFA] dark:bg-[#0A0A0A]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div ref={headerRef} className="section-reveal flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
-              <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
-                Our Portfolio
+              <div className="h-px w-10 bg-primary" />
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                Our Work
               </span>
             </div>
-            <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight">
-              Our Work
+            <h2 className="font-headline font-normal text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white leading-tight">
+              Transformations
             </h2>
           </div>
-          <p className="text-gray-500 dark:text-gray-400 max-w-sm lg:text-right">
-            Expert craftsmanship. Premium materials. Outdoor spaces built to last.
+          <p className="text-gray-500 dark:text-gray-400 font-light max-w-sm lg:text-right">
+            Every visit is a carefully crafted experience. Browse our portfolio of looks and treatments.
           </p>
         </div>
 
@@ -48,49 +45,25 @@ export default function Gallery({ config }) {
           {config.galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`${layouts[i] || 'col-span-1 row-span-1'} overflow-hidden rounded-sm cursor-pointer group relative`}
-              onClick={() => setLightbox(img)}
+              className={`${layouts[i] || 'col-span-1 row-span-1'} overflow-hidden cursor-pointer group relative`}
             >
               <img
                 src={img}
                 alt={`Gallery ${i + 1}`}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
                 <svg
                   className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-6"
-          onClick={() => setLightbox(null)}
-        >
-          <img
-            src={lightbox}
-            alt="Gallery"
-            className="max-w-4xl w-full max-h-[85vh] object-contain rounded-sm"
-          />
-          <button
-            className="absolute top-6 right-6 text-white w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white dark:bg-[#111111]/10"
-            onClick={() => setLightbox(null)}
-          >
-            ✕
-          </button>
-        </div>
-      )}
     </section>
   )
 }
-
-
-
