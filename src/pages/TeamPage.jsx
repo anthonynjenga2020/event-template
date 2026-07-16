@@ -1,104 +1,96 @@
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal.js'
+import Navbar from '../components/Navbar.jsx'
+import Footer from '../components/Footer.jsx'
 
 export default function TeamPage({ config }) {
   const heroRef = useReveal()
   const gridRef = useReveal()
 
   return (
-    <div style={{ backgroundColor: 'var(--bg)' }}>
-      {/* Hero */}
-      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: 'var(--surface)' }}>
-        <div className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: 'repeating-linear-gradient(0deg, var(--border) 0px, var(--border) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, var(--border) 0px, var(--border) 1px, transparent 1px, transparent 60px)' }} />
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
-          <div ref={heroRef} className="section-reveal">
-            <div className="flex items-center gap-4 mb-4">
-              <Link to="/" className="text-gray-600 text-xs uppercase tracking-widest hover:text-gray-400 transition-colors">
-                Home
-              </Link>
-              <span className="text-gray-700">/</span>
-              <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--primary)' }}>Team</span>
+    <>
+      <Navbar config={config} />
+      <div className="bg-[#FAFAFA] dark:bg-[#0A0A0A] min-h-screen pt-24">
+        {/* Hero */}
+        <section className="pt-24 pb-20 relative overflow-hidden bg-white dark:bg-[#111111]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 text-center">
+            <div ref={heroRef} className="section-reveal">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                  Master Artists
+                </span>
+                <div className="h-px w-12 bg-primary" />
+              </div>
+              <h1 className="font-headline font-normal text-5xl sm:text-6xl lg:text-7xl text-gray-900 dark:text-white leading-tight mb-6">
+                Meet The Team
+              </h1>
+              <p className="text-gray-500 dark:text-gray-400 font-light text-lg max-w-2xl mx-auto mb-8">
+                Our curated team of master stylists and estheticians are passionate about enhancing your natural beauty.
+              </p>
             </div>
-            <h1 className="font-headline font-black text-5xl sm:text-6xl lg:text-7xl text-white uppercase leading-tight mb-6">
-              Meet The<br />
-              <span style={{ color: 'var(--primary)' }}>Experts.</span>
-            </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mb-8">
-              Our team of experienced landscape architects and builders are dedicated to bringing your vision to life.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Grid */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div ref={gridRef} className={`section-reveal grid gap-6 ${config.team?.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
-            {config.team?.map((member, i) => (
-              <Link
-                key={i}
-                to={`/team/${member.id}`}
-                className="group card-hover rounded-sm overflow-hidden border relative block"
-                style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}
-              >
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  />
-                  {/* Overlay */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-500"
-                    style={{ background: `linear-gradient(to top, var(--primary), transparent)` }}
-                  />
-                </div>
-
-                {/* Info */}
-                <div className="p-6">
-                  <h3 className="font-headline font-bold text-lg text-white uppercase tracking-wide">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm mt-1" style={{ color: 'var(--primary)' }}>
-                    {member.specialty}
-                  </p>
-                  <div className="flex items-center gap-2 mt-3">
-                    <div className="h-px w-4 opacity-40" style={{ backgroundColor: 'var(--primary)' }} />
-                    <span className="text-gray-600 text-xs uppercase tracking-widest">
-                      {member.experience} experience
-                    </span>
-                  </div>
-                </div>
-
-                {/* View Profile CTA */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 py-3 text-center text-xs font-black uppercase tracking-widest text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                  style={{ backgroundColor: 'var(--primary)' }}
+        {/* Grid */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div ref={gridRef} className={`section-reveal grid gap-8 ${config.team?.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
+              {config.team?.map((member, i) => (
+                <Link
+                  key={i}
+                  to={`/team/${member.id}`}
+                  className="group bg-white dark:bg-[#111111] rounded-none overflow-hidden border border-gray-100 dark:border-[#222222] shadow-sm hover:shadow-xl transition-shadow duration-500"
                 >
-                  View Profile →
-                </div>
-              </Link>
-            ))}
+                  {/* Image */}
+                  <div className="relative aspect-[3/4] overflow-hidden bg-gray-50 dark:bg-[#1A1A1A]">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-top mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-6 text-center">
+                    <h3 className="font-headline font-normal text-xl text-gray-900 dark:text-white">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-light text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-widest mt-1">
+                      {member.specialty}
+                    </p>
+                    <div className="flex items-center justify-center gap-3 mt-4 text-xs font-medium text-primary">
+                      <span>View Portfolio</span>
+                      <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      
-      {/* Bottom CTA */}
-      <section className="py-20" style={{ backgroundColor: 'var(--surface)' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
-          <h2 className="font-headline font-black text-4xl sm:text-5xl text-white uppercase mb-4">
-            Ready to work with us?
-          </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-            Get in touch to schedule your free on-site consultation.
-          </p>
-          <a href="/#contact" className="btn-primary px-10 py-4 rounded-sm text-sm inline-block">
-            Get a Free Estimate →
-          </a>
-        </div>
-      </section>
-    </div>
+        </section>
+        
+        {/* Bottom CTA */}
+        <section className="py-24 bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-[#222222]">
+          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+            <h2 className="font-headline font-normal text-4xl text-gray-900 dark:text-white mb-6">
+              Ready for a transformation?
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 font-light text-lg mb-10">
+              Book a consultation with one of our master artists today.
+            </p>
+            <a href="/booking" className="btn-primary px-10 py-4 text-base inline-block">
+              Book Appointment
+            </a>
+          </div>
+        </section>
+      </div>
+      <Footer config={config} />
+    </>
   )
 }
+
+
+

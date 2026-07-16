@@ -21,13 +21,14 @@
 
   body {
     background-color: var(--bg);
-    color: #FFFFFF;
+    color: #333333;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Playfair Display', serif;
+    color: #111111;
   }
 }
 
@@ -81,32 +82,31 @@
   .btn-primary {
     background-color: var(--primary);
     color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .btn-primary:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 78, 26, 0.4);
+    box-shadow: 0 10px 30px rgba(212, 163, 115, 0.4);
   }
 
   .btn-outline {
-    border: 2px solid rgba(255,255,255,0.2);
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    border: 1px solid var(--border);
+    color: #333333;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   }
 
   .btn-outline:hover {
     border-color: var(--primary);
-    background-color: rgba(255, 78, 26, 0.1);
+    background-color: var(--primary);
+    color: white;
   }
 
   .noise-overlay {

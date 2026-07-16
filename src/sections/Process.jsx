@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion'
 
+const SPA_PROCESS = [
+  { icon: '💬', name: 'Consultation', description: 'Book a complimentary consultation. We assess your hair, skin, or wellness needs and design a personalized treatment plan just for you.' },
+  { icon: '✨', name: 'Treatment', description: 'Relax and enjoy your bespoke treatment performed by our master artists using only premium, professional-grade products.' },
+  { icon: '🌿', name: 'Aftercare', description: 'We provide personalized aftercare guidance and recommend the right products so your results last as long as possible.' },
+]
+
 export default function Process({ config }) {
-  if (!config.process || config.process.length === 0) return null
+  const steps = config.process?.length ? config.process : SPA_PROCESS
 
   return (
-    <section id="process" className="py-24 relative" style={{ backgroundColor: 'var(--bg)' }}>
+    <section id="process" className="py-24 bg-white dark:bg-[#111111]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Header */}
@@ -15,66 +21,57 @@ export default function Process({ config }) {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-3 mb-4"
           >
-            <div className="h-px w-8" style={{ backgroundColor: 'var(--primary)' }} />
-            <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--primary)' }}>
+            <div className="h-px w-8 bg-primary" />
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
               How It Works
             </span>
-            <div className="h-px w-8" style={{ backgroundColor: 'var(--primary)' }} />
+            <div className="h-px w-8 bg-primary" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-headline font-bold text-white uppercase tracking-tight"
+            className="text-4xl md:text-5xl font-headline font-normal text-gray-900 dark:text-white leading-tight"
           >
-            Our Simple Process
+            Your Experience
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-gray-400 text-lg"
+            className="mt-4 text-gray-500 dark:text-gray-400 font-light text-lg"
           >
-            From your first idea to the final walkthrough, we make transforming your outdoor space easy and stress-free.
+            From your first visit to your regular ritual — here's what to expect.
           </motion.p>
         </div>
 
         {/* Process Steps */}
         <div className="grid md:grid-cols-3 gap-8 relative">
-          {config.process.map((step, idx) => (
+          {steps.map((step, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative p-8 rounded-sm border border-white/5 transition-colors duration-300"
-              style={{ backgroundColor: 'var(--surface)' }}
+              transition={{ delay: idx * 0.15 }}
+              className="relative p-8 border border-gray-100 dark:border-[#222] bg-[#FAFAFA] dark:bg-[#0A0A0A] hover:border-primary/30 transition-colors duration-300"
             >
               {/* Step Number Background */}
-              <div 
-                className="absolute top-4 right-6 text-8xl font-black opacity-5 pointer-events-none"
-                style={{ color: 'var(--primary)' }}
-              >
+              <div className="absolute top-4 right-6 text-8xl font-headline font-normal opacity-5 text-primary pointer-events-none">
                 {idx + 1}
               </div>
               
               <div className="relative z-10">
-                <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: 'var(--bg)', border: '1px solid var(--primary)' }}
-                >
-                  <span className="text-2xl" style={{ color: 'var(--primary)' }}>
-                    {step.icon === 'clipboard' ? '📋' : step.icon === 'pen' ? '📐' : '🔨'}
-                  </span>
+                <div className="w-14 h-14 flex items-center justify-center mb-6 bg-white dark:bg-[#111111] border border-gray-100 dark:border-[#222]">
+                  <span className="text-2xl">{step.icon}</span>
                 </div>
                 
-                <h3 className="text-2xl font-headline font-bold text-white uppercase mb-3">
+                <h3 className="text-xl font-headline font-normal text-gray-900 dark:text-white mb-3">
                   {step.name}
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed text-sm">
                   {step.description}
                 </p>
               </div>
@@ -91,10 +88,10 @@ export default function Process({ config }) {
           className="mt-16 text-center"
         >
           <a
-            href="#contact"
-            className="btn-primary px-8 py-4 rounded-sm text-base inline-block"
+            href="/booking"
+            className="btn-primary px-8 py-4 text-base inline-block"
           >
-            {config.trialCTA}
+            {config.bookingCTA || 'Book Appointment'}
           </a>
         </motion.div>
         

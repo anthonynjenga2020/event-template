@@ -52,7 +52,7 @@ export default function RecentProjects({ config }) {
                   <h3 className="font-headline font-black text-2xl text-white uppercase mb-1 mt-3">
                     {program.name}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
                     {program.tagline}
                   </p>
 
@@ -115,3 +115,6 @@ export default function RecentProjects({ config }) {
     </section>
   )
 }
+
+
+

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal.js'
 
 export default function Team({ config }) {
@@ -6,86 +5,70 @@ export default function Team({ config }) {
   const gridRef = useReveal()
 
   return (
-    <section id="team" className="py-28 lg:py-40" style={{ backgroundColor: 'var(--surface)' }}>
+    <section id="team" className="py-28 lg:py-40 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div ref={headerRef} className="section-reveal text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
-            <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
-              The Team
+            <div className="h-px w-10 bg-primary" />
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              Master Artists
             </span>
-            <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
+            <div className="h-px w-10 bg-primary" />
           </div>
-          <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight">
-            Meet Our<br />Experts
+          <h2 className="font-headline font-normal text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white leading-tight">
+            Meet the Team
           </h2>
-          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-            Experienced. Professional. Dedicated to bringing your outdoor vision to life with precision and care.
+          <p className="text-gray-500 dark:text-gray-400 font-light mt-4 max-w-xl mx-auto">
+            Our curated team of master stylists and estheticians are passionate about enhancing your natural beauty.
           </p>
         </div>
 
-        {/* Trainer Cards */}
-        <div ref={gridRef} className={`section-reveal grid gap-6 ${config.team?.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
+        {/* Team Cards */}
+        <div ref={gridRef} className={`section-reveal grid gap-8 ${config.team?.length === 3 ? 'md:grid-cols-3' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
           {config.team?.map((member, i) => (
-            <Link
+            <a
               key={i}
-              to={`/team/${member.id}`}
-              className="group card-hover rounded-sm overflow-hidden border relative block"
-              style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg)' }}
+              href={`/team/${member.id}`}
+              className="group bg-white dark:bg-[#111111] overflow-hidden border border-gray-100 dark:border-[#222222] shadow-sm hover:shadow-xl transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden bg-gray-50 dark:bg-[#1A1A1A]">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Overlay */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-500"
-                  style={{ background: `linear-gradient(to top, var(--primary), transparent)` }}
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Info */}
-              <div className="p-6">
-                <h3 className="font-headline font-bold text-lg text-white uppercase tracking-wide">
+              <div className="p-6 text-center">
+                <h3 className="font-headline font-normal text-xl text-gray-900 dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-sm mt-1" style={{ color: 'var(--primary)' }}>
+                <p className="text-sm font-light text-primary mb-3 uppercase tracking-widest mt-1">
                   {member.specialty}
                 </p>
-                <div className="flex items-center gap-2 mt-3">
-                  <div className="h-px w-4 opacity-40" style={{ backgroundColor: 'var(--primary)' }} />
-                  <span className="text-gray-600 text-xs uppercase tracking-widest">
-                    {member.experience} experience
-                  </span>
+                <div className="flex items-center justify-center gap-3 mt-4 text-xs font-medium text-gray-400">
+                  <span>{member.experience} Experience</span>
                 </div>
               </div>
-
-              {/* View Profile CTA on hover */}
-              <div
-                className="absolute bottom-0 left-0 right-0 py-3 text-center text-xs font-black uppercase tracking-widest text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                style={{ backgroundColor: 'var(--primary)' }}
-              >
-                View Profile →
-              </div>
-            </Link>
+            </a>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <Link
-            to="/team"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-sm text-sm font-black uppercase tracking-widest border transition-all"
-            style={{ borderColor: 'var(--border)', color: 'var(--primary)' }}
-            onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.backgroundColor = 'rgba(255,78,26,0.08)' }}
-            onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.backgroundColor = 'transparent' }}
+        <div className="mt-14 text-center">
+          <a
+            href="/team"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark uppercase tracking-widest border-b border-primary/30 hover:border-primary pb-1 transition-colors"
           >
-            Meet the Full Team →
-          </Link>
+            Meet the Full Team
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

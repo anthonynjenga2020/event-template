@@ -13,25 +13,25 @@
 export const themes = {
 
   // ──────────────────────────────────────────────────────────
-  // V1 — DARK POWER
-  // The default. Black, bold, high-contrast. Orange aggression.
-  // Font: Space Grotesk (already loaded in index.html)
+  // V1 — SPA LUXURY
+  // Warm, earthy, elegant. High-end salon vibe.
+  // Font: Playfair Display + Inter
   // ──────────────────────────────────────────────────────────
   V1: {
-    name: 'Dark Power',
+    name: 'Spa Luxury',
     css: {
-      '--primary':        '#FF4E1A',
-      '--primary-dark':   '#CC3E14',
-      '--accent':         '#FFFFFF',
-      '--bg':             '#0A0A0A',
-      '--surface':        '#141414',
-      '--border':         '#222222',
-      '--font-headline':  "'Space Grotesk', sans-serif",
+      '--primary':        '#8A9A86',
+      '--primary-dark':   '#6B7A68',
+      '--accent':         '#E2E8DF',
+      '--bg':             '#FAFAFA',
+      '--surface':        '#FFFFFF',
+      '--border':         '#EBEBEB',
+      '--font-headline':  "'Playfair Display', serif",
       '--font-body':      "'Inter', sans-serif",
-      '--radius':         '2px',
-      '--shadow-primary': '0 20px 60px rgba(255,78,26,0.2)',
+      '--radius':         '0px',
+      '--shadow-primary': '0 20px 60px rgba(212,163,115,0.15)',
     },
-    font: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap',
+    font: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap',
     bodyClass: 'theme-v1',
   },
 
