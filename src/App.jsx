@@ -11,6 +11,8 @@ import ServicesPage from './pages/ServicesPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
 import TeamMemberPage from './pages/TeamMemberPage.jsx'
 import ReviewPage from './pages/ReviewPage.jsx'
+import EventCalculatorPage from './pages/EventCalculatorPage.jsx'
+import PackagesPage from './pages/PackagesPage.jsx'
 import { AnimatePresence } from 'framer-motion'
 
 // Hide navbar/footer/whatsapp button on the /review page
@@ -38,7 +40,6 @@ export default function App() {
       
       if (businessQuery) {
         newConfig.businessName = businessQuery
-        // Replace all instances of Ironclad Landscaping in messages and descriptions
         newConfig.whatsappMessage = newConfig.whatsappMessage.replace(/Ironclad Landscaping/g, businessQuery)
         newConfig.aboutDescription = newConfig.aboutDescription.replace(/Ironclad Landscaping/g, businessQuery)
       }
@@ -57,11 +58,14 @@ export default function App() {
       <Layout config={config}>
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/"                    element={<HomePage    config={config} />} />
-            <Route path="/services"            element={<ServicesPage config={config} />} />
-            <Route path="/team"                element={<TeamPage config={config} />} />
-            <Route path="/team/:memberId"      element={<TeamMemberPage  config={config} />} />
-            <Route path="/review"              element={<ReviewPage   config={config} />} />
+            <Route path="/"                    element={<HomePage             config={config} />} />
+            <Route path="/services"            element={<ServicesPage         config={config} />} />
+            <Route path="/calculator font"     element={<EventCalculatorPage  config={config} />} />
+            <Route path="/calculator"          element={<EventCalculatorPage  config={config} />} />
+            <Route path="/packages"            element={<PackagesPage         config={config} />} />
+            <Route path="/team"                element={<TeamPage             config={config} />} />
+            <Route path="/team/:memberId"      element={<TeamMemberPage       config={config} />} />
+            <Route path="/review"              element={<ReviewPage           config={config} />} />
           </Routes>
         </AnimatePresence>
       </Layout>

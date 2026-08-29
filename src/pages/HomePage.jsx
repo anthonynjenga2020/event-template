@@ -2,6 +2,7 @@ import Hero from '../sections/Hero.jsx'
 import Stats from '../sections/Stats.jsx'
 import About from '../sections/About.jsx'
 import CoreServices from '../sections/CoreServices.jsx'
+import EventCalculator from '../sections/EventCalculator.jsx'
 import RecentProjects from '../sections/RecentProjects.jsx'
 import Team from '../sections/Team.jsx'
 import Gallery from '../sections/Gallery.jsx'
@@ -39,6 +40,7 @@ export default function HomePage({ config }) {
         <Stats config={config} />
         <About config={config} />
         <CoreServices config={config} />
+        <EventCalculator config={config} />
         <RecentProjects config={config} />
         <Team config={config} />
         <Gallery config={config} />

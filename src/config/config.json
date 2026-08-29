@@ -11,12 +11,42 @@
   "heroImageUrl": "/scaper (10).png",
   "aboutImageUrl": "/scaper (11).png",
   "galleryImages": [
-    "/scaper (1).jpeg",
-    "/scaper (2).jpeg",
-    "/scaper (3).png",
-    "/scaper (4).png",
-    "/scaper (5).png",
-    "/scaper (6).png"
+    {
+      "url": "/scaper (1).jpeg",
+      "category": "Weddings",
+      "title": "Romantic Tuscan Estate Wedding",
+      "location": "Karen Estate Gardens"
+    },
+    {
+      "url": "/scaper (2).jpeg",
+      "category": "Corporate Galas",
+      "title": "Annual Executive Tech Summit",
+      "location": "Grand Horizon Center"
+    },
+    {
+      "url": "/scaper (3).png",
+      "category": "Brand Activations",
+      "title": "Luxury Fashion Product Launch",
+      "location": "The Glasshouse Loft"
+    },
+    {
+      "url": "/scaper (4).png",
+      "category": "Private Parties",
+      "title": "Exclusive 50th Birthday Soirée",
+      "location": "Lavington Villa"
+    },
+    {
+      "url": "/scaper (5).png",
+      "category": "Weddings",
+      "title": "Sunset Coastal Vow Exchange",
+      "location": "Ocean Front Resort"
+    },
+    {
+      "url": "/scaper (6).png",
+      "category": "Corporate Galas",
+      "title": "Global Leadership Awards Gala",
+      "location": "Convention Center"
+    }
   ],
   "primaryColor": "#D4AF37",
   "primaryDark": "#AA8C2C",
@@ -48,80 +78,115 @@
   "services": [
     {
       "name": "Corporate Events",
-      "icon": "",
+      "icon": "🏢",
       "desc": "Conferences, galas, and brand activations designed to impress stakeholders and engage audiences.",
       "image": "/scaper (21).jpg"
     },
     {
       "name": "Weddings",
-      "icon": "",
+      "icon": "💍",
       "desc": "Full-service wedding planning, from venue sourcing to day-of coordination for your special day.",
       "image": "/scaper (20).jpg"
     },
     {
       "name": "Private Galas",
-      "icon": "",
+      "icon": "🍸",
       "desc": "Exclusive, high-end private parties and celebrations tailored to your unique style.",
       "image": "/scaper (19).jpg"
     },
     {
       "name": "Brand Activations",
-      "icon": "",
+      "icon": "✨",
       "desc": "Immersive brand experiences that captivate consumers and leave a lasting impact.",
       "image": "/scaper (18).jpg"
     },
     {
       "name": "Venue Sourcing",
-      "icon": "",
+      "icon": "📍",
       "desc": "Finding the perfect backdrop for your event from our exclusive network of premium venues.",
       "image": "/scaper (17).jpg"
     },
     {
       "name": "Event Design",
-      "icon": "",
+      "icon": "🎨",
       "desc": "Custom concept design, floral arrangements, and decor to bring your vision to life.",
       "image": "/scaper (16).jpg"
     }
   ],
   "recentProjects": [
     {
+      "id": "project-1",
       "name": "Annual Tech Summit",
-      "tagline": "A two-day conference for 500+ industry leaders.",
+      "category": "Corporate Galas",
+      "tagline": "A two-day conference & award gala for 500+ tech leaders.",
       "duration": "6 Months Planning",
-      "budget": "Custom",
-      "icon": "",
+      "budget": "$75,000+",
+      "icon": "🏢",
+      "guestCount": "500 Guests",
+      "venue": "The Grand Horizon Center",
+      "highlights": [
+        "Custom 360-degree LED stage layout",
+        "VIP networking lounge & cocktail bar",
+        "Seamless live-stream integration for remote attendees",
+        "Curated farm-to-table dining experience"
+      ],
+      "clientQuote": "Luxe Events Co. handled our complex summit with zero friction. The attendee feedback was extraordinary.",
       "includes": [
         "Venue Sourcing",
-        "Stage Design",
-        "A/V Coordination",
-        "Catering",
-        "Guest Management"
+        "Stage & Lighting Design",
+        "A/V & Production",
+        "Catering Management",
+        "Guest Concierge"
       ]
     },
     {
+      "id": "project-2",
       "name": "Luxury Garden Wedding",
-      "tagline": "An elegant, bespoke wedding experience for 200 guests.",
+      "category": "Weddings",
+      "tagline": "An elegant, bespoke outdoor wedding experience for 200 guests.",
       "duration": "1 Year Planning",
-      "budget": "Custom",
-      "icon": "",
+      "budget": "$120,000+",
+      "icon": "💍",
+      "guestCount": "200 Guests",
+      "venue": "Karen Estate Gardens",
+      "highlights": [
+        "Glass marquee tent with cascading floral ceiling",
+        "Custom monogrammed dance floor and lighting",
+        "Multi-course gourmet wine pairing dinner",
+        "Full day-of coordination with 12-person crew"
+      ],
+      "clientQuote": "Our wedding was straight out of a fairy tale. Elena and her team executed every detail beyond our wildest dreams.",
       "includes": [
         "Full-Service Planning",
-        "Floral Design",
-        "Vendor Management",
-        "Day-of Coordination"
+        "Floral & Scenography",
+        "Vendor Sourcing",
+        "Day-of Coordination",
+        "Guest Logistics"
       ]
     },
     {
+      "id": "project-3",
       "name": "Fashion Brand Launch",
-      "tagline": "An immersive product launch event and after-party.",
+      "category": "Brand Activations",
+      "tagline": "An immersive product launch event, runway show, and after-party.",
       "duration": "3 Months Planning",
-      "budget": "Custom",
-      "icon": "",
+      "budget": "$45,000+",
+      "icon": "✨",
+      "guestCount": "150 Guests",
+      "venue": "The Glasshouse Loft",
+      "highlights": [
+        "Interactive neon brand activation tunnels",
+        "Celebrity & influencer red carpet reception",
+        "Bespoke signature cocktails & DJ performance",
+        "High-impact social media photo moments"
+      ],
+      "clientQuote": "The engagement generated from this launch was unprecedented. Luxe Events Co. knows how to create buzz.",
       "includes": [
-        "Concept Design",
-        "Lighting & Sound",
-        "Influencer Outreach",
-        "Custom Fabrication"
+        "Concept & Scenography",
+        "Lighting & Sound Design",
+        "VIP Hospitality",
+        "Custom Fabrication",
+        "After-Party Production"
       ]
     }
   ],

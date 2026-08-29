@@ -21,11 +21,10 @@ export default function Navbar({ config }) {
 
   const navLinks = [
     { label: 'Services', href: '/services' },
-    { label: 'Shop', href: '/shop' },
-    { label: 'Memberships', href: '/memberships' },
-    { label: 'Gift Cards', href: '/gift-cards' },
+    { label: 'Event Calculator', href: '/calculator' },
+    { label: 'Packages', href: '/packages' },
     { label: 'Our Story', href: '/#about' },
-    { label: 'Team', href: '/#team' },
+    { label: 'Process', href: '/#process' },
   ]
 
   const isExternal = (href) => href.startsWith('/#')
