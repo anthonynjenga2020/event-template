@@ -1,75 +1,81 @@
 import { useState } from 'react'
 import { useReveal } from '../hooks/useReveal.js'
 
-const DEFAULT_FAQS = [
-  { q: 'Do I need to book in advance?', a: 'We highly recommend booking at least 48 hours in advance, especially for color services and special occasion styling. Walk-ins are welcome based on availability.' },
-  { q: 'How long does a color service take?', a: 'Color services typically range from 1.5 to 3 hours depending on the complexity, your hair length, and desired result. We\'ll give you a time estimate during your consultation.' },
-  { q: 'What products do you use?', a: 'We exclusively use premium, professional-grade products from leading brands. Our retail boutique carries these same products so you can maintain your results at home.' },
-  { q: 'Do you offer bridal packages?', a: 'Yes! We offer comprehensive bridal packages that include a trial run, day-of hair and makeup, and options for the bridal party. Contact us early to reserve your date.' },
-  { q: 'What is your cancellation policy?', a: 'We kindly ask for 24 hours notice for cancellations or rescheduling. Late cancellations or no-shows may be subject to a fee of 50% of the service price.' },
+const DEFAULT_EVENT_FAQS = [
+  { q: 'How far in advance should we book your services?', a: 'For large events like weddings or corporate galas, we recommend booking 9–12 months in advance. For smaller private events, 3–6 months is usually sufficient, though we can accommodate tighter timelines based on availability.' },
+  { q: 'Do you handle venue sourcing?', a: 'Yes! We have an extensive network of premium venues (ballrooms, vineyards, rooftop lounges, private estates) and present options tailored to your guest count, budget, and vision.' },
+  { q: 'What is your minimum budget requirement?', a: 'Because we focus on bespoke, full-service event production, our typical minimum event budget starts at $15,000. Contact us for a custom proposal tailored to your needs.' },
+  { q: 'Do you offer day-of coordination only?', a: 'While we specialize in full-service event design and planning, we do offer month-of and day-of coordination packages depending on event scale and season.' },
+  { q: 'How do you handle vendor management & contracts?', a: 'We manage all vendor communication, contract negotiations, A/V tech specs, and day-of timing so you don\'t have to stress about a single detail.' },
 ]
 
 export default function FAQ({ config }) {
-  const faqs = config.faqs?.length ? config.faqs : DEFAULT_FAQS
+  const faqs = config.faqs?.length ? config.faqs : DEFAULT_EVENT_FAQS
   const [openIndex, setOpenIndex] = useState(null)
   const headerRef = useReveal()
   const contentRef = useReveal()
 
   return (
-    <section className="py-28 lg:py-40 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
+    <section id="faq" className="py-28 lg:py-40 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
           {/* Left: header */}
           <div ref={headerRef} className="section-reveal lg:sticky lg:top-28">
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-10 bg-primary" />
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
+              <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
                 FAQ
               </span>
             </div>
-            <h2 className="font-headline font-normal text-4xl sm:text-5xl text-gray-900 dark:text-white leading-tight mb-6">
+            <h2 className="font-headline font-black text-4xl sm:text-5xl text-white uppercase leading-tight mb-6">
               Questions?<br />
-              <span className="text-primary">We've got<br />answers.</span>
+              <span style={{ color: 'var(--primary)' }}>We've got<br />answers.</span>
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 font-light text-base leading-relaxed mb-8">
-              Can't find what you're looking for? Drop us a message and we'll get back to you shortly.
+            <p className="text-gray-400 font-light text-base leading-relaxed mb-8">
+              Can't find what you're looking for? Contact our concierge team and we'll get back to you shortly.
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark uppercase tracking-widest border-b border-primary/30 hover:border-primary pb-1 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b border-white/20 hover:border-primary pb-1 transition-colors"
+              style={{ color: 'var(--primary)' }}
             >
               Ask a Question
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
 
           {/* Right: accordion */}
-          <div ref={contentRef} className="section-reveal space-y-2">
+          <div ref={contentRef} className="section-reveal space-y-3">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`border overflow-hidden transition-all duration-200 ${openIndex === i ? 'border-primary/40' : 'border-gray-100 dark:border-[#222]'} bg-white dark:bg-[#111111]`}
+                className={`border overflow-hidden rounded-sm transition-all duration-200 ${
+                  openIndex === i ? 'border-primary' : 'border-[#222222]'
+                } bg-[#141414]`}
               >
                 <button
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 >
-                  <span className="font-headline font-normal text-base text-gray-900 dark:text-white">
+                  <span className="font-headline font-bold text-base text-white">
                     {faq.q}
                   </span>
                   <div
-                    className={`w-7 h-7 flex items-center justify-center shrink-0 transition-all duration-300 ${openIndex === i ? 'rotate-45 bg-primary' : 'bg-gray-100 dark:bg-[#222]'}`}
+                    className={`w-7 h-7 flex items-center justify-center shrink-0 transition-all duration-300 rounded-sm ${
+                      openIndex === i ? 'rotate-45' : 'bg-[#1A1A1A]'
+                    }`}
+                    style={openIndex === i ? { backgroundColor: 'var(--primary)' } : {}}
                   >
-                    <svg className={`w-3 h-3 ${openIndex === i ? 'text-white' : 'text-gray-500 dark:text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16M4 12h16" />
+                    <svg className={`w-3.5 h-3.5 ${openIndex === i ? 'text-black font-bold' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16M4 12h16" />
                     </svg>
                   </div>
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? 'max-h-96' : 'max-h-0'}`}>
-                  <p className="px-6 pb-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="px-6 pb-6 text-gray-300 text-sm leading-relaxed font-light border-t border-[#222222]/50 pt-4">
                     {faq.a}
                   </p>
                 </div>

@@ -5,22 +5,22 @@ export default function Team({ config }) {
   const gridRef = useReveal()
 
   return (
-    <section id="team" className="py-28 lg:py-40 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
+    <section id="team" className="py-28 lg:py-40 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div ref={headerRef} className="section-reveal text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-10 bg-primary" />
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
-              Master Artists
+            <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
+            <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--primary)' }}>
+              Event Directors
             </span>
-            <div className="h-px w-10 bg-primary" />
+            <div className="h-px w-10" style={{ backgroundColor: 'var(--primary)' }} />
           </div>
-          <h2 className="font-headline font-normal text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white leading-tight">
+          <h2 className="font-headline font-black text-4xl sm:text-5xl lg:text-6xl text-white uppercase leading-tight">
             Meet the Team
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 font-light mt-4 max-w-xl mx-auto">
-            Our curated team of master stylists and estheticians are passionate about enhancing your natural beauty.
+          <p className="text-gray-400 font-light mt-4 max-w-xl mx-auto text-base">
+            Our team of lead directors, creative producers, and vendor managers are dedicated to crafting your perfect event.
           </p>
         </div>
 
@@ -30,27 +30,27 @@ export default function Team({ config }) {
             <a
               key={i}
               href={`/team/${member.id}`}
-              className="group bg-white dark:bg-[#111111] overflow-hidden border border-gray-100 dark:border-[#222222] shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group bg-[#141414] overflow-hidden border border-[#222222] rounded-sm hover:border-primary transition-all duration-500 card-hover flex flex-col justify-between"
             >
               {/* Image */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-gray-50 dark:bg-[#1A1A1A]">
+              <div className="relative aspect-[3/4] overflow-hidden bg-[#1A1A1A]">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-80" />
               </div>
 
               {/* Info */}
               <div className="p-6 text-center">
-                <h3 className="font-headline font-normal text-xl text-gray-900 dark:text-white">
+                <h3 className="font-headline font-bold text-xl text-white">
                   {member.name}
                 </h3>
-                <p className="text-sm font-light text-primary mb-3 uppercase tracking-widest mt-1">
+                <p className="text-xs font-bold uppercase tracking-widest mt-1 mb-3" style={{ color: 'var(--primary)' }}>
                   {member.specialty}
                 </p>
-                <div className="flex items-center justify-center gap-3 mt-4 text-xs font-medium text-gray-400">
+                <div className="flex items-center justify-center gap-3 mt-4 text-xs font-medium text-gray-400 border-t border-[#222222] pt-4">
                   <span>{member.experience} Experience</span>
                 </div>
               </div>
@@ -62,11 +62,12 @@ export default function Team({ config }) {
         <div className="mt-14 text-center">
           <a
             href="/team"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark uppercase tracking-widest border-b border-primary/30 hover:border-primary pb-1 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b border-white/20 hover:border-primary pb-1 transition-colors"
+            style={{ color: 'var(--primary)' }}
           >
             Meet the Full Team
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
         </div>

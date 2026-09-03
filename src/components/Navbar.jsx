@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import ThemeToggle from './ThemeToggle.jsx'
+import { motion } from 'framer-motion'
 
 export default function Navbar({ config }) {
   const [scrolled, setScrolled] = useState(false)
@@ -23,27 +22,27 @@ export default function Navbar({ config }) {
     { label: 'Services', href: '/services' },
     { label: 'Event Calculator', href: '/calculator' },
     { label: 'Packages', href: '/packages' },
-    { label: 'Our Story', href: '/#about' },
-    { label: 'Process', href: '/#process' },
+    { label: 'Our Team', href: '/team' },
+    { label: 'Inquire', href: '/#contact' },
   ]
 
-  const isExternal = (href) => href.startsWith('/#')
+  const isExternal = (href) => href.startsWith('/#') || href.startsWith('#')
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-4 navbar-scrolled dark:bg-[#0A0A0A]/90 dark:border-[#222] shadow-sm' : 'py-6 bg-transparent'
+        scrolled ? 'py-4 navbar-scrolled shadow-lg' : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className={`font-headline font-normal text-2xl tracking-wide ${scrolled ? 'text-gray-900 dark:text-white dark:text-white' : 'text-gray-900 dark:text-white dark:text-white'}`}>
+        <Link to="/" className="font-headline font-normal text-2xl tracking-wide flex items-center gap-3">
           {config.logoUrl ? (
             <img src={config.logoUrl} alt={config.businessName} className="h-10 w-auto" />
           ) : (
             <>
               <div
-                className="w-8 h-8 rounded-sm flex items-center justify-center font-headline font-black text-white text-sm"
+                className="w-8 h-8 rounded-sm flex items-center justify-center font-headline font-black text-black text-sm"
                 style={{ backgroundColor: 'var(--primary)' }}
               >
                 {config.businessName?.charAt(0)}
@@ -55,34 +54,26 @@ export default function Navbar({ config }) {
           )}
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link, i) => (
             <motion.div
               key={link.href}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
             >
               {isExternal(link.href) ? (
                 <a
                   href={link.href}
-                  className={`text-xs uppercase tracking-widest font-medium transition-colors ${
-                  scrolled 
-                    ? 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-gray-400 dark:hover:text-white' 
-                    : 'text-gray-600 hover:text-gray-900 dark:text-white dark:text-gray-300 dark:hover:text-white'
-                }`}
+                  className="text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors"
                 >
                   {link.label}
                 </a>
               ) : (
                 <Link
                   to={link.href}
-                  className={`text-xs uppercase tracking-widest font-medium transition-colors ${
-                  scrolled 
-                    ? 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-white dark:text-gray-400 dark:hover:text-white' 
-                    : 'text-gray-600 hover:text-gray-900 dark:text-white dark:text-gray-300 dark:hover:text-white'
-                }`}
+                  className="text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -91,62 +82,59 @@ export default function Navbar({ config }) {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <motion.div 
           className="hidden lg:flex items-center gap-4"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
         >
-          <ThemeToggle />
           <a
-            href="/booking"
-            className="hidden lg:inline-flex btn-primary px-6 py-2.5 text-xs"
+            href="/#contact"
+            className="hidden lg:inline-flex btn-primary px-6 py-2.5 text-xs rounded-sm uppercase tracking-widest font-bold"
           >
-            {config.bookingCTA || 'Book Now'}
+            {config.trialCTA || 'Book Consultation'}
           </a>
         </motion.div>
 
         {/* Mobile menu button */}
         <button
-          className={`lg:hidden p-2 -mr-2 ${scrolled ? 'text-gray-900 dark:text-white dark:text-white' : 'text-gray-900 dark:text-white dark:text-white'}`}
+          className="lg:hidden p-2 -mr-2 text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-white dark:bg-[#111111] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white dark:bg-[#111111] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white dark:bg-[#111111] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96' : 'max-h-0'}`}
-        style={{ backgroundColor: 'rgba(10,10,10,0.98)', backdropFilter: 'blur(20px)' }}
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96 border-b' : 'max-h-0'}`}
+        style={{ backgroundColor: 'rgba(10,10,10,0.98)', backdropFilter: 'blur(20px)', borderColor: 'var(--border)' }}
       >
-        <div className="px-6 pb-8 pt-4 flex flex-col gap-6">
+        <div className="px-6 pb-8 pt-4 flex flex-col gap-5">
           {navLinks.map((link) =>
             isExternal(link.href) ? (
               <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-                        className="text-3xl font-headline font-normal text-gray-900 dark:text-white dark:text-white hover:text-primary transition-colors"
-                      >{link.label}
+                className="text-gray-300 hover:text-white text-sm font-medium uppercase tracking-widest transition-colors"
+              >
+                {link.label}
               </a>
             ) : (
               <Link key={link.href} to={link.href} onClick={() => setMenuOpen(false)}
-                className="text-gray-300 hover:text-white text-base font-medium uppercase tracking-widest transition-colors">
+                className="text-gray-300 hover:text-white text-sm font-medium uppercase tracking-widest transition-colors">
                 {link.label}
               </Link>
             )
           )}
-          <Link to="/booking" onClick={() => setMenuOpen(false)}
-            className="btn-primary px-6 py-4 rounded-sm text-sm text-center mt-2">
-            {config.bookingCTA || 'Book Now'}
-          </Link>
+          <a href="/#contact" onClick={() => setMenuOpen(false)}
+            className="btn-primary px-6 py-3.5 rounded-sm text-xs text-center uppercase tracking-widest font-bold mt-2">
+            {config.trialCTA || 'Book Consultation'}
+          </a>
         </div>
       </div>
     </nav>
   )
 }
-
-
-
