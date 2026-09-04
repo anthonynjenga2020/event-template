@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import defaultConfig from './config/config.json'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
-import WhatsAppButton from './components/WhatsAppButton.jsx'
+import EventConciergeWidget from './components/EventConciergeWidget.jsx'
 
 // Pages
 import HomePage from './pages/HomePage.jsx'
@@ -24,7 +24,7 @@ function Layout({ children, config }) {
       {!isReview && <Navbar config={config} />}
       {children}
       {!isReview && <Footer config={config} />}
-      {!isReview && <WhatsAppButton config={config} />}
+      {!isReview && <EventConciergeWidget config={config} />}
     </div>
   )
 }
