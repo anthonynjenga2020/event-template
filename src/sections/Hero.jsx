@@ -7,17 +7,25 @@ export default function Hero({ config }) {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ backgroundColor: 'var(--bg)' }}
     >
-      {/* Background Video */}
+      {/* Background Video or Image */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover object-center"
-        >
-          <source src="/scapervid.mp4" type="video/mp4" />
-        </video>
+        {config.heroImageUrl?.endsWith('.mp4') ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center"
+          >
+            <source src={config.heroImageUrl} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src={config.heroImageUrl}
+            alt="Hero Background"
+            className="w-full h-full object-cover object-center"
+          />
+        )}
         {/* Dark gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/85 to-[#0A0A0A]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />

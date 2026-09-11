@@ -8,41 +8,41 @@
   "location": "Nairobi, Kenya",
   "googleMapsEmbed": "https://maps.google.com/maps?q=Nairobi&output=embed",
   "logoUrl": "",
-  "heroImageUrl": "/scaper (10).png",
-  "aboutImageUrl": "/scaper (11).png",
+  "heroImageUrl": "/event (1).mp4",
+  "aboutImageUrl": "/event (1).jpg",
   "galleryImages": [
     {
-      "url": "/scaper (1).jpeg",
+      "url": "/event (2).jpg",
       "category": "Weddings",
       "title": "Romantic Tuscan Estate Wedding",
       "location": "Karen Estate Gardens"
     },
     {
-      "url": "/scaper (2).jpeg",
+      "url": "/event (3).jpg",
       "category": "Corporate Galas",
       "title": "Annual Executive Tech Summit",
       "location": "Grand Horizon Center"
     },
     {
-      "url": "/scaper (3).png",
+      "url": "/event (4).jpg",
       "category": "Brand Activations",
       "title": "Luxury Fashion Product Launch",
       "location": "The Glasshouse Loft"
     },
     {
-      "url": "/scaper (4).png",
+      "url": "/event (5).jpg",
       "category": "Private Parties",
       "title": "Exclusive 50th Birthday Soirée",
       "location": "Lavington Villa"
     },
     {
-      "url": "/scaper (5).png",
+      "url": "/event (6).jpg",
       "category": "Weddings",
       "title": "Sunset Coastal Vow Exchange",
       "location": "Ocean Front Resort"
     },
     {
-      "url": "/scaper (6).png",
+      "url": "/event (7).jpg",
       "category": "Corporate Galas",
       "title": "Global Leadership Awards Gala",
       "location": "Convention Center"
@@ -80,37 +80,37 @@
       "name": "Corporate Events",
       "icon": "🏢",
       "desc": "Conferences, galas, and brand activations designed to impress stakeholders and engage audiences.",
-      "image": "/scaper (21).jpg"
+      "image": "/event (2).jpg"
     },
     {
       "name": "Weddings",
       "icon": "💍",
       "desc": "Full-service wedding planning, from venue sourcing to day-of coordination for your special day.",
-      "image": "/scaper (20).jpg"
+      "image": "/event (3).jpg"
     },
     {
       "name": "Private Galas",
       "icon": "🍸",
       "desc": "Exclusive, high-end private parties and celebrations tailored to your unique style.",
-      "image": "/scaper (19).jpg"
+      "image": "/event (4).jpg"
     },
     {
       "name": "Brand Activations",
       "icon": "✨",
       "desc": "Immersive brand experiences that captivate consumers and leave a lasting impact.",
-      "image": "/scaper (18).jpg"
+      "image": "/event (5).jpg"
     },
     {
       "name": "Venue Sourcing",
       "icon": "📍",
       "desc": "Finding the perfect backdrop for your event from our exclusive network of premium venues.",
-      "image": "/scaper (17).jpg"
+      "image": "/event (6).jpg"
     },
     {
       "name": "Event Design",
       "icon": "🎨",
       "desc": "Custom concept design, floral arrangements, and decor to bring your vision to life.",
-      "image": "/scaper (16).jpg"
+      "image": "/event (7).jpg"
     }
   ],
   "recentProjects": [
@@ -196,8 +196,8 @@
       "name": "Elena Rossi",
       "specialty": "Lead Event Director",
       "experience": "15 Years",
-      "image": "/scaper (14).png",
-      "coverImage": "/scaper (13).png",
+      "image": "/event (8).jpg",
+      "coverImage": "/event (1).jpg",
       "bio": "Elena brings a wealth of experience in high-end event production, ensuring every event is executed flawlessly and exceeds client expectations.",
       "certifications": [
         "Certified Special Events Professional (CSEP)"
@@ -221,8 +221,8 @@
       "name": "Marcus Chen",
       "specialty": "Creative Director",
       "experience": "10 Years",
-      "image": "/scaper (10).png",
-      "coverImage": "/scaper (11).png",
+      "image": "/event (9).jpg",
+      "coverImage": "/event (2).jpg",
       "bio": "Marcus is the visionary behind our event designs, transforming ordinary spaces into extraordinary immersive experiences.",
       "certifications": [
         "BA Event Design"
@@ -244,8 +244,8 @@
       "name": "Sophia Williams",
       "specialty": "Vendor Relations Manager",
       "experience": "8 Years",
-      "image": "/scaper (8).png",
-      "coverImage": "/scaper (9).png",
+      "image": "/event (3).jpg",
+      "coverImage": "/event (4).jpg",
       "bio": "Sophia manages our extensive network of premium vendors, ensuring we secure the best talent, venues, and services for your event.",
       "certifications": [
         "Certified Meeting Professional (CMP)"
